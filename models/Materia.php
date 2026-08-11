@@ -1,4 +1,5 @@
 <?php
+// models/Materia.php
 
 require_once __DIR__ . '/../includes/connection.php';
 
@@ -27,6 +28,9 @@ class Materia
     public function getById(int $id)
     {
         $stmt = $this->db->prepare("SELECT * FROM materias WHERE id_materia = ?");
+        if (!$stmt) {
+            return null;
+        }
         $stmt->bind_param("i", $id);
         $stmt->execute();
         return $stmt->get_result()->fetch_assoc();
@@ -34,25 +38,52 @@ class Materia
 
     public function create(array $data): bool
     {
+        if (empty($data['nombre_materia']) || empty($data['id_carrera']) || empty($data['id_semestre'])) {
+            return false;
+        }
+
         $stmt = $this->db->prepare(
             "INSERT INTO materias (nombre_materia, id_carrera, id_semestre) VALUES (?, ?, ?)"
         );
-        $stmt->bind_param("sii", $data['nombre_materia'], $data['id_carrera'], $data['id_semestre']);
+        if (!$stmt) {
+            return false;
+        }
+        
+        $nombre = $data['nombre_materia'];
+        $idCarrera = (int)$data['id_carrera'];
+        $idSemestre = (int)$data['id_semestre'];
+        
+        $stmt->bind_param("sii", $nombre, $idCarrera, $idSemestre);
         return $stmt->execute();
     }
 
     public function update(int $id, array $data): bool
     {
+        if (empty($data['nombre_materia']) || empty($data['id_carrera']) || empty($data['id_semestre'])) {
+            return false;
+        }
+
         $stmt = $this->db->prepare(
             "UPDATE materias SET nombre_materia = ?, id_carrera = ?, id_semestre = ? WHERE id_materia = ?"
         );
-        $stmt->bind_param("siii", $data['nombre_materia'], $data['id_carrera'], $data['id_semestre'], $id);
+        if (!$stmt) {
+            return false;
+        }
+        
+        $nombre = $data['nombre_materia'];
+        $idCarrera = (int)$data['id_carrera'];
+        $idSemestre = (int)$data['id_semestre'];
+        
+        $stmt->bind_param("siii", $nombre, $idCarrera, $idSemestre, $id);
         return $stmt->execute();
     }
 
     public function delete(int $id): bool
     {
         $stmt = $this->db->prepare("DELETE FROM materias WHERE id_materia = ?");
+        if (!$stmt) {
+            return false;
+        }
         $stmt->bind_param("i", $id);
         return $stmt->execute();
     }

@@ -1,4 +1,4 @@
-  // assets/components/table-component.js
+// assets/components/table-component.js
 class TableComponent extends HTMLElement {
     constructor() {
         super();
@@ -10,6 +10,7 @@ class TableComponent extends HTMLElement {
         this.currentPage = 1;
         this.searchTerm = '';
         this.filteredData = [];
+        this.idField = null;
     }
 
     connectedCallback() {
@@ -316,7 +317,6 @@ class TableComponent extends HTMLElement {
                     margin: 0;
                 }
 
-                /* Row selection */
                 .table-row-selected {
                     background: rgba(102, 126, 234, 0.05) !important;
                 }
@@ -457,6 +457,28 @@ class TableComponent extends HTMLElement {
 
         let html = '';
         data.forEach((row, index) => {
+            let rowId = null;
+            
+            if (this.idField && row[this.idField] !== undefined && row[this.idField] !== null) {
+                rowId = row[this.idField];
+            } else if (row.id !== undefined && row.id !== null) {
+                rowId = row.id;
+            } else if (row.id_usuario !== undefined && row.id_usuario !== null) {
+                rowId = row.id_usuario;
+            } else if (row.id_materia !== undefined && row.id_materia !== null) {
+                rowId = row.id_materia;
+            } else if (row.id_grupounam !== undefined && row.id_grupounam !== null) {
+                rowId = row.id_grupounam;
+            } else if (row.id_asignacion !== undefined && row.id_asignacion !== null) {
+                rowId = row.id_asignacion;
+            } else if (row.id_alumno !== undefined && row.id_alumno !== null) {
+                rowId = row.id_alumno;
+            } else if (row.id_carrera !== undefined && row.id_carrera !== null) {
+                rowId = row.id_carrera;
+            } else {
+                rowId = index;
+            }
+            
             html += '<tr>';
             this.columns.forEach(col => {
                 let value = row[col.key] !== undefined && row[col.key] !== null ? row[col.key] : '-';
@@ -492,7 +514,7 @@ class TableComponent extends HTMLElement {
                     html += `
                         <button class="btn-${color} action-btn" 
                                 data-action="${action.key}" 
-                                data-id="${row.id || row.id_usuario || index}"
+                                data-id="${rowId}"
                                 title="${label}">
                             <i class="fas ${icon}"></i>
                         </button>
@@ -504,17 +526,30 @@ class TableComponent extends HTMLElement {
         });
         body.innerHTML = html;
 
-        // Event listeners for action buttons
         body.querySelectorAll('.action-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const action = btn.dataset.action;
-                const id = btn.dataset.id;
-                const rowData = this.data.find(row => (row.id || row.id_usuario) == id);
+                const id = parseInt(btn.dataset.id);
+                
+                let rowData = null;
+                for (let row of data) {
+                    let rowId = null;
+                    if (this.idField && row[this.idField] !== undefined) {
+                        rowId = row[this.idField];
+                    } else {
+                        rowId = row.id || row.id_usuario || row.id_materia || row.id_grupounam || row.id_asignacion || row.id_alumno || row.id_carrera;
+                    }
+                    if (rowId == id) {
+                        rowData = row;
+                        break;
+                    }
+                }
+                
                 this.dispatchEvent(new CustomEvent('action', {
                     detail: { 
                         action, 
-                        id, 
+                        id: id,
                         data: rowData || {},
                         event: e
                     }
@@ -522,7 +557,6 @@ class TableComponent extends HTMLElement {
             });
         });
 
-        // Row click event
         body.querySelectorAll('tr').forEach(row => {
             row.addEventListener('click', function() {
                 this.classList.toggle('table-row-selected');
@@ -557,7 +591,6 @@ class TableComponent extends HTMLElement {
                 </button>
             `;
 
-            // Pagination logic with ellipsis
             const maxVisible = 5;
             let startPage = Math.max(1, this.currentPage - Math.floor(maxVisible / 2));
             let endPage = Math.min(totalPages, startPage + maxVisible - 1);
@@ -630,6 +663,10 @@ class TableComponent extends HTMLElement {
         this.pageSize = size || 10;
         this.currentPage = 1;
         this.renderTable();
+    }
+
+    setIdField(field) {
+        this.idField = field;
     }
 
     prevPage() {

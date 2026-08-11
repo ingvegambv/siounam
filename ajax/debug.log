@@ -457,3 +457,1575 @@
     [session] => Activa
 )
 
+2026-08-11 21:56:53 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:02:52 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:02:55 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:05:32 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:05:32 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:05:32 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:05:32 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:05:32 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:05:42 - Materia - Action: create - POST: Array
+(
+    [action] => create
+    [id] => 
+    [nombre_materia] => Ecologia y Salud
+    [id_carrera] => 5
+    [id_semestre] => 1
+)
+
+2026-08-11 22:05:44 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:05:44 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:05:44 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:05:44 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:15:02 - Grupo - Action: create - POST: Array
+(
+    [action] => create
+    [id] => 
+    [nombre_grupo] => 3010-Enfermeria
+    [id_carrera] => 5
+)
+
+2026-08-11 22:15:03 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:15:03 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:15:03 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:15:03 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:15:11 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:15:26 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:15:46 - Array
+(
+    [action] => create
+    [post] => Array
+        (
+            [action] => create
+            [id] => 
+            [id_rol] => 3
+            [id_carrera] => 
+            [nombre] => maestro
+            [apellido_paterno] => maestro
+            [apellido_materno] => maestro
+            [usuario] => maestro
+            [contrasena] => maestro
+            [correo] => 
+            [telefono] => 
+            [activo] => 1
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:15:47 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:15:58 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:15:58 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:15:58 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:15:58 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:15:58 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:16:41 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:16:51 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:16:54 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:16:54 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:16:54 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:16:54 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:16:54 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:17:44 - Grupo - Action: create - POST: Array
+(
+    [action] => create
+    [id] => 
+    [nombre_grupo] => 3020
+    [id_carrera] => 5
+)
+
+2026-08-11 22:17:45 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:17:45 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:17:45 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:17:45 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:17:55 - Grupo - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 1
+)
+
+2026-08-11 22:18:02 - Grupo - Action: update - POST: Array
+(
+    [action] => update
+    [id] => 1
+    [nombre_grupo] => 3020-Enfermeria
+    [id_carrera] => 5
+)
+
+2026-08-11 22:18:03 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:03 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:03 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:03 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:18:06 - Grupo - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:18:07 - Grupo - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:18:08 - Grupo - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:18:08 - Grupo - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:18:09 - Grupo - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:18:10 - Grupo - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:18:10 - Grupo - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 1
+)
+
+2026-08-11 22:18:15 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:18:17 - Array
+(
+    [action] => get
+    [post] => Array
+        (
+            [action] => get
+            [id] => 7
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:18:19 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:19 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:19 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:18:19 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:19 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:21 - Materia - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:18:22 - Materia - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:18:23 - Materia - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:18:30 - Grupo - Action: delete - POST: Array
+(
+    [action] => delete
+    [id] => 0
+)
+
+2026-08-11 22:18:31 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:31 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:18:31 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:31 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:34 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:34 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:34 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:18:34 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:34 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:42 - Materia - Action: delete - POST: Array
+(
+    [action] => delete
+    [id] => 0
+)
+
+2026-08-11 22:18:43 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:43 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:18:43 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:43 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:45 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:45 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:45 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:18:45 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:18:45 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:23:23 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:23:23 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:23:23 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:23:23 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:23:23 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:23:23 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:23:32 - Asignacion - Action: create - POST: Array
+(
+    [action] => create
+    [id_grupounam] => 1
+    [id_materia] => 3
+    [id_usuario] => 7
+)
+
+2026-08-11 22:23:33 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:23:43 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:24:08 - Array
+(
+    [action] => create
+    [post] => Array
+        (
+            [action] => create
+            [id] => 
+            [id_rol] => 3
+            [id_carrera] => 
+            [nombre] => maestro2
+            [apellido_paterno] => maestro2
+            [apellido_materno] => maestro2
+            [usuario] => maestro2
+            [contrasena] => maestro2
+            [correo] => 
+            [telefono] => 
+            [activo] => 1
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:24:09 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:24:14 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:24:14 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:24:14 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:24:14 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:24:14 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:24:14 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:24:30 - Asignacion - Action: create - POST: Array
+(
+    [action] => create
+    [id_grupounam] => 2
+    [id_materia] => 3
+    [id_usuario] => 8
+)
+
+2026-08-11 22:24:31 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:24:37 - Asignacion - Action: delete - POST: Array
+(
+    [action] => delete
+    [id] => 8
+)
+
+2026-08-11 22:24:38 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:26 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:26 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:26 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:26 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:26 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:26:26 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:30 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:30 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:30 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:30 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:30 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:26:30 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:45 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:26:46 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:46 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:46 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:46 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:46 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:26:46 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:47 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:26:49 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:49 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:49 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:49 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:26:49 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:26:49 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:33:53 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:33:53 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:33:53 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:33:53 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:33:53 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:33:53 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:33:56 - Materia - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:33:57 - Materia - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:33:58 - Materia - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:33:59 - Materia - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:34:04 - Grupo - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:34:04 - Grupo - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:34:05 - Grupo - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:34:05 - Grupo - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 1
+)
+
+2026-08-11 22:34:08 - Grupo - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:34:08 - Grupo - Action: get - POST: Array
+(
+    [action] => get
+    [id] => 0
+)
+
+2026-08-11 22:34:10 - Grupo - Action: delete - POST: Array
+(
+    [action] => delete
+    [id] => 0
+)
+
+2026-08-11 22:34:11 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:34:11 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:34:11 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:34:11 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:34:11 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:34:14 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:34:14 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:34:14 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:34:14 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:34:14 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:34:14 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:43:24 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:43:24 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:43:24 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:43:24 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:43:24 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:43:24 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:43:30 - Grupo - Action: delete - POST: Array
+(
+    [action] => delete
+    [id] => 0
+)
+
+2026-08-11 22:43:32 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:43:32 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:43:32 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:43:32 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:43:32 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:11 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:11 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:11 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:11 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:44:11 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:11 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:19 - Grupo - Action: delete - POST: Array
+(
+    [action] => delete
+    [id] => 0
+)
+
+2026-08-11 22:44:22 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:22 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:44:22 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:22 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:22 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:30 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:30 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:30 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:30 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:44:30 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:30 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:37 - Grupo - Action: delete - POST: Array
+(
+    [action] => delete
+    [id] => 0
+)
+
+2026-08-11 22:44:39 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:39 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:44:39 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:39 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:44:39 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:47:32 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:47:32 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:47:32 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:47:32 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:47:32 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:47:32 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:47:41 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:47:41 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:47:41 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:47:41 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:47:41 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:47:41 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:48:58 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:48:58 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:48:58 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:48:58 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:48:58 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:48:58 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:51:06 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:51:06 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:51:06 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:51:06 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:51:06 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:51:06 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:51:07 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:51:07 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:51:07 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:51:07 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:51:07 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:51:07 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:51:23 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:51:23 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:51:23 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:51:23 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:51:23 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:51:23 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:57:55 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:57:55 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:57:55 - Asignacion - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:57:55 - Materia - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 22:57:55 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 22:57:55 - Grupo - Action: list - POST: Array
+(
+    [action] => list
+)
+
+2026-08-11 23:00:10 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 23:00:18 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-11 23:00:27 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
