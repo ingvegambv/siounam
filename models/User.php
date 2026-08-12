@@ -92,22 +92,45 @@ class User
             (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         );
 
+        if (!$stmt) {
+            return false;
+        }
+
         $password = password_hash($data['contrasena'], PASSWORD_DEFAULT);
 
+        // Convertir valores para evitar null en bind_param
+        $idRol = (int)$data['id_rol'];
         $idCarrera = (!empty($data['id_carrera']) && $data['id_carrera'] !== 'null') ? (int)$data['id_carrera'] : null;
+        $nombre = $data['nombre'];
+        $apellidoPaterno = $data['apellido_paterno'];
+        $apellidoMaterno = $data['apellido_materno'];
+        $usuario = $data['usuario'];
+        $correo = !empty($data['correo']) ? $data['correo'] : null;
+        $telefono = !empty($data['telefono']) ? $data['telefono'] : null;
+        $activo = (int)($data['activo'] ?? 1);
 
+        // Si id_carrera es null, usar NULL en la base de datos
+        // Para bind_param, si es null, debemos pasarlo como string vacío y usar 's' o null
+        // La solución: usar un valor por defecto y manejarlo correctamente
+        
+        // CORRECCIÓN: Usamos una variable separada para el tipo de dato
+        $tipoCarrera = $idCarrera === null ? 's' : 'i';
+        $valorCarrera = $idCarrera === null ? null : $idCarrera;
+
+        // Usamos bind_param con todos los parámetros como variables
+        // IMPORTANTE: Todos los parámetros deben ser variables, no valores directos
         $stmt->bind_param(
             "iisssssssi",
-            (int)$data['id_rol'],
-            $idCarrera,
-            $data['nombre'],
-            $data['apellido_paterno'],
-            $data['apellido_materno'],
-            $data['usuario'],
+            $idRol,
+            $idCarrera,  // Esto puede ser null, pero bind_param lo maneja con 'i'
+            $nombre,
+            $apellidoPaterno,
+            $apellidoMaterno,
+            $usuario,
             $password,
-            $data['correo'] ?? null,
-            $data['telefono'] ?? null,
-            (int)($data['activo'] ?? 1)
+            $correo,
+            $telefono,
+            $activo
         );
 
         return $stmt->execute();
@@ -115,11 +138,12 @@ class User
 
     public function update(int $id, array $data): bool
     {
-        $idCarrera = (!empty($data['id_carrera']) && $data['id_carrera'] !== 'null') ? (int)$data['id_carrera'] : null;
-
+        // Si se proporciona nueva contraseña, actualizarla
         if (!empty($data['contrasena'])) {
             $this->updatePassword($id, $data['contrasena']);
         }
+
+        $idCarrera = (!empty($data['id_carrera']) && $data['id_carrera'] !== 'null') ? (int)$data['id_carrera'] : null;
 
         $stmt = $this->db->prepare(
             "UPDATE usuarios_unam
@@ -136,17 +160,30 @@ class User
             WHERE id_usuario = ?"
         );
 
+        if (!$stmt) {
+            return false;
+        }
+
+        $idRol = (int)$data['id_rol'];
+        $nombre = $data['nombre'];
+        $apellidoPaterno = $data['apellido_paterno'];
+        $apellidoMaterno = $data['apellido_materno'];
+        $usuario = $data['usuario'];
+        $correo = !empty($data['correo']) ? $data['correo'] : null;
+        $telefono = !empty($data['telefono']) ? $data['telefono'] : null;
+        $activo = (int)($data['activo'] ?? 1);
+
         $stmt->bind_param(
             "iissssssii",
-            (int)$data['id_rol'],
+            $idRol,
             $idCarrera,
-            $data['nombre'],
-            $data['apellido_paterno'],
-            $data['apellido_materno'],
-            $data['usuario'],
-            $data['correo'] ?? null,
-            $data['telefono'] ?? null,
-            (int)($data['activo'] ?? 1),
+            $nombre,
+            $apellidoPaterno,
+            $apellidoMaterno,
+            $usuario,
+            $correo,
+            $telefono,
+            $activo,
             $id
         );
 
@@ -167,22 +204,26 @@ class User
             WHERE id_usuario = ?"
         );
 
+        if (!$stmt) {
+            return false;
+        }
+
         $stmt->bind_param("si", $passwordHash, $id);
         return $stmt->execute();
     }
 
-    /**
-     * ELIMINAR FÍSICAMENTE un usuario de la base de datos
-     * Esto también eliminará las asignaciones relacionadas (si las hay)
-     */
     public function delete(int $id): bool
     {
-        // Primero, verificar si el usuario tiene asignaciones (maestro)
-        // Si tiene asignaciones, también se eliminarán por CASCADE
-        $stmt = $this->db->prepare("DELETE FROM usuarios_unam WHERE id_usuario = ?");
+        $stmt = $this->db->prepare(
+            "UPDATE usuarios_unam
+            SET activo = 0
+            WHERE id_usuario = ?"
+        );
+
         if (!$stmt) {
             return false;
         }
+
         $stmt->bind_param("i", $id);
         return $stmt->execute();
     }

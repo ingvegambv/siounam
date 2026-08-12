@@ -22,6 +22,13 @@ switch ($action) {
             break;
         }
         
+        // Validar tabla permitida
+        $tablasPermitidas = ['usuarios_unam', 'alumnos_unam', 'materias', 'grupo_unam', 'carrera_unam', 'calificaciones_unam'];
+        if (!in_array($tabla, $tablasPermitidas)) {
+            echo json_encode(['success' => false, 'message' => 'Tabla no permitida']);
+            break;
+        }
+        
         $result = $db->query("SELECT * FROM $tabla LIMIT 1000");
         if ($result) {
             echo json_encode([
@@ -42,6 +49,12 @@ switch ($action) {
             break;
         }
         
+        $tablasPermitidas = ['usuarios_unam', 'alumnos_unam', 'materias', 'grupo_unam', 'carrera_unam', 'calificaciones_unam'];
+        if (!in_array($tabla, $tablasPermitidas)) {
+            echo json_encode(['success' => false, 'message' => 'Tabla no permitida']);
+            break;
+        }
+        
         // Obtener columna ID
         $result = $db->query("SHOW KEYS FROM $tabla WHERE Key_name = 'PRIMARY'");
         $row = $result->fetch_assoc();
@@ -57,6 +70,11 @@ switch ($action) {
         $tabla = $_GET['tabla'] ?? '';
         if (!$tabla) {
             die('Tabla no especificada');
+        }
+        
+        $tablasPermitidas = ['usuarios_unam', 'alumnos_unam', 'materias', 'grupo_unam', 'carrera_unam', 'calificaciones_unam'];
+        if (!in_array($tabla, $tablasPermitidas)) {
+            die('Tabla no permitida');
         }
         
         $result = $db->query("SELECT * FROM $tabla");
@@ -95,34 +113,139 @@ switch ($action) {
             break;
         }
         
-        $handle = fopen($file, 'r');
-        $headers = fgetcsv($handle);
-        
-        $inserted = 0;
-        while ($row = fgetcsv($handle)) {
-            $data = array_combine($headers, $row);
-            
-            $columns = implode(', ', array_keys($data));
-            $placeholders = implode(', ', array_fill(0, count($data), '?'));
-            
-            $stmt = $db->prepare("INSERT INTO $tabla ($columns) VALUES ($placeholders)");
-            
-            $types = str_repeat('s', count($data));
-            $values = array_values($data);
-            
-            $stmt->bind_param($types, ...$values);
-            
-            if ($stmt->execute()) {
-                $inserted++;
-            }
+        $tablasPermitidas = ['usuarios_unam', 'alumnos_unam', 'materias', 'grupo_unam', 'carrera_unam', 'calificaciones_unam'];
+        if (!in_array($tabla, $tablasPermitidas)) {
+            echo json_encode(['success' => false, 'message' => 'Tabla no permitida']);
+            break;
         }
         
-        fclose($handle);
+        // Leer el archivo CSV
+        $handle = fopen($file, 'r');
+        if (!$handle) {
+            echo json_encode(['success' => false, 'message' => 'Error al abrir el archivo']);
+            break;
+        }
         
-        echo json_encode([
-            'success' => true,
-            'message' => "$inserted registros importados"
-        ]);
+        // Leer encabezados
+        $headers = fgetcsv($handle);
+        if (!$headers) {
+            echo json_encode(['success' => false, 'message' => 'El archivo CSV no tiene encabezados válidos']);
+            fclose($handle);
+            break;
+        }
+        
+        // Limpiar encabezados (remover BOM si existe)
+        $headers = array_map(function($h) {
+            return trim($h, "\xEF\xBB\xBF");
+        }, $headers);
+        
+        // Iniciar transacción
+        $db->begin_transaction();
+        
+        try {
+            $inserted = 0;
+            $errors = [];
+            $rowNumber = 1;
+            
+            // Si la tabla es usuarios_unam, necesitamos encriptar contraseñas
+            $esUsuarios = ($tabla === 'usuarios_unam');
+            
+            while (($row = fgetcsv($handle)) !== false) {
+                $rowNumber++;
+                
+                // Verificar que la fila tenga el mismo número de columnas
+                if (count($row) !== count($headers)) {
+                    $errors[] = "Fila $rowNumber: Número de columnas no coincide";
+                    continue;
+                }
+                
+                // Combinar encabezados con valores
+                $data = array_combine($headers, $row);
+                
+                // Si es usuarios_unam, encriptar la contraseña
+                if ($esUsuarios && isset($data['contrasena']) && !empty($data['contrasena'])) {
+                    $data['contrasena'] = password_hash($data['contrasena'], PASSWORD_DEFAULT);
+                }
+                
+                // Si es usuarios_unam y id_carrera está vacío, establecer NULL
+                if ($esUsuarios && isset($data['id_carrera']) && empty($data['id_carrera'])) {
+                    $data['id_carrera'] = null;
+                }
+                
+                // Construir la consulta
+                $columns = array_keys($data);
+                $placeholders = array_fill(0, count($data), '?');
+                
+                $sql = "INSERT INTO $tabla (" . implode(', ', $columns) . ") VALUES (" . implode(', ', $placeholders) . ")";
+                $stmt = $db->prepare($sql);
+                
+                if (!$stmt) {
+                    $errors[] = "Fila $rowNumber: Error en la preparación de la consulta - " . $db->error;
+                    continue;
+                }
+                
+                // Crear los tipos y valores para bind_param
+                $types = '';
+                $values = [];
+                foreach ($data as $key => $value) {
+                    // Determinar el tipo
+                    if ($value === null || $value === '') {
+                        $types .= 's';
+                        $values[] = null;
+                    } elseif (is_numeric($value) && strpos($value, '.') === false) {
+                        $types .= 'i';
+                        $values[] = (int)$value;
+                    } elseif (is_numeric($value)) {
+                        $types .= 'd';
+                        $values[] = (float)$value;
+                    } else {
+                        $types .= 's';
+                        $values[] = $value;
+                    }
+                }
+                
+                // Bind parameters
+                $stmt->bind_param($types, ...$values);
+                
+                if ($stmt->execute()) {
+                    $inserted++;
+                } else {
+                    $errors[] = "Fila $rowNumber: " . $stmt->error;
+                }
+                
+                $stmt->close();
+            }
+            
+            fclose($handle);
+            
+            // Si hay errores, pero algunos se insertaron, preguntar si continuar
+            if (!empty($errors)) {
+                $db->rollback();
+                echo json_encode([
+                    'success' => false,
+                    'message' => "Se encontraron errores en el archivo. Se han revertido todos los cambios.",
+                    'errors' => $errors,
+                    'inserted' => 0,
+                    'total_rows' => $rowNumber - 1
+                ]);
+            } else {
+                $db->commit();
+                echo json_encode([
+                    'success' => true,
+                    'message' => "$inserted registros importados correctamente",
+                    'inserted' => $inserted,
+                    'total_rows' => $rowNumber - 1
+                ]);
+            }
+            
+        } catch (Exception $e) {
+            $db->rollback();
+            fclose($handle);
+            echo json_encode([
+                'success' => false,
+                'message' => 'Error al importar: ' . $e->getMessage()
+            ]);
+        }
         break;
         
     default:
