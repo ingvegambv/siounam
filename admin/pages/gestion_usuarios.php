@@ -354,27 +354,34 @@ require_once '../includes/auth_check.php';
         }
 
         function eliminarUsuario(id) {
-            if (confirm('¿Estás seguro de desactivar este usuario?')) {
-                $.ajax({
-                    url: URL_USERS,
-                    type: 'POST',
-                    data: { action: 'delete', id: id },
-                    dataType: 'json',
-                    success: function(response) {
-                        if (response.success) {
-                            alert('Usuario desactivado correctamente');
-                            cargarUsuarios();
-                        } else {
-                            alert('Error al desactivar el usuario');
-                        }
-                    },
-                    error: function(xhr) {
-                        console.error('Error al eliminar:', xhr.responseText);
-                        alert('Error al conectar con el servidor');
+    // Cambiar el mensaje de confirmación
+    if (confirm('⚠️ ¿Estás seguro de ELIMINAR PERMANENTEMENTE este usuario?\n\nEsta acción NO se puede deshacer y eliminará:\n• Todos los datos del usuario\n• Sus asignaciones como maestro (si las tiene)\n• Todo el historial relacionado\n\n¿Continuar?')) {
+        
+        // Confirmación adicional
+        if (!confirm('⚠️ Confirmación final: ¿Realmente deseas ELIMINAR este usuario de forma permanente?')) {
+            return;
+        }
+        
+        $.ajax({
+            url: URL_USERS,
+            type: 'POST',
+            data: { action: 'delete', id: id },
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    alert('✅ Usuario eliminado permanentemente');
+                    cargarUsuarios();
+                } else {
+                    alert('❌ Error: ' + (response.message || 'No se pudo eliminar el usuario'));
+                }
+            },
+            error: function(xhr) {
+                console.error('Error al eliminar:', xhr.responseText);
+                alert('❌ Error al conectar con el servidor');
                     }
                 });
             }
-        }
+        }   
 
         function guardarUsuario() {
             const idRol = $('#id_rol').val();

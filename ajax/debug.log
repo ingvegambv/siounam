@@ -2029,3 +2029,50 @@
     [session] => Activa
 )
 
+2026-08-12 18:19:57 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-12 18:22:01 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 18:22:07 - Array
+(
+    [action] => delete
+    [post] => Array
+        (
+            [action] => delete
+            [id] => 7
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 18:22:08 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
