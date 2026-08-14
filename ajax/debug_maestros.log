@@ -1,0 +1,105 @@
+2026-08-13 21:10:07 - Action: assign, POST: Array
+(
+    [action] => assign
+    [id_usuario] => 47
+    [id_carrera] => 4
+)
+
+2026-08-13 21:10:07 - Assign: Usuario=47, Carrera=4, Resultado=Éxito
+2026-08-13 21:10:36 - Action: assign, POST: Array
+(
+    [action] => assign
+    [id_usuario] => 47
+    [id_carrera] => 1
+)
+
+2026-08-13 21:10:36 - Assign: Usuario=47, Carrera=1, Resultado=Éxito
+2026-08-14 19:41:15 - Action: assign, POST: Array
+(
+    [action] => assign
+    [id_usuario] => 51
+    [id_carrera] => 2
+)
+
+2026-08-14 19:41:15 - Assign: Usuario=51, Carrera=2, Resultado=Éxito
+2026-08-14 19:41:23 - Action: delete_by_usuario, POST: Array
+(
+    [action] => delete_by_usuario
+    [id_usuario] => 51
+    [id_carrera] => 2
+)
+
+2026-08-14 19:41:23 - delete_by_usuario: Usuario=51, Carrera=2
+2026-08-14 19:41:23 - delete_by_usuario Resultado=Éxito
+2026-08-14 20:22:43 - Action: search_available, POST: Array
+(
+    [action] => search_available
+    [query] => vega
+    [id_carrera] => 2
+)
+
+2026-08-14 20:22:46 - Action: search_available, POST: Array
+(
+    [action] => search_available
+    [query] => vv
+    [id_carrera] => 2
+)
+
+2026-08-14 20:22:49 - Action: search_available, POST: Array
+(
+    [action] => search_available
+    [query] => ve
+    [id_carrera] => 2
+)
+
+2026-08-14 20:23:26 - Action: search_available, POST: Array
+(
+    [action] => search_available
+    [query] => vv
+    [id_carrera] => 2
+)
+
+2026-08-14 20:23:27 - Action: search_available, POST: Array
+(
+    [action] => search_available
+    [query] => vvega
+    [id_carrera] => 2
+)
+
+2026-08-14 20:23:29 - Action: search_available, POST: Array
+(
+    [action] => search_available
+    [query] => vvega
+    [id_carrera] => 2
+)
+
+2026-08-14 20:23:30 - Action: search_available, POST: Array
+(
+    [action] => search_available
+    [query] => vvega
+    [id_carrera] => 2
+)
+
+2026-08-14 20:26:35 - Action: search_available, POST: Array
+(
+    [action] => search_available
+    [query] => vv
+    [id_carrera] => 2
+)
+
+2026-08-14 20:26:35 - search_available: query=vv, id_carrera=2
+2026-08-14 20:26:35 - search_available: encontrados 1 maestros
+2026-08-14 20:26:38 - Action: assign, POST: Array
+(
+    [id_usuario] => 51
+    [action] => assign
+    [id_carrera] => 2
+)
+
+2026-08-14 20:26:45 - Action: delete_by_usuario, POST: Array
+(
+    [action] => delete_by_usuario
+    [id_usuario] => 51
+    [id_carrera] => 2
+)
+

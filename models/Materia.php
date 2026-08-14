@@ -5,86 +5,133 @@ require_once __DIR__ . '/../includes/connection.php';
 
 class Materia
 {
-    private mysqli $db;
+    private $db;
 
     public function __construct()
     {
         $this->db = Database::getConnection();
     }
 
-    public function getAll(): array
+    /**
+     * Obtiene todas las materias
+     */
+    public function getAll()
     {
-        $sql = "
-            SELECT m.*, c.nombre_carrera, s.nombre_semestre
-            FROM materias m
-            INNER JOIN carrera_unam c ON m.id_carrera = c.id_carrera
-            INNER JOIN semestre s ON m.id_semestre = s.id_semestre
-            ORDER BY m.nombre_materia
-        ";
-        $result = $this->db->query($sql);
+        $query = "SELECT m.*, c.nombre_carrera, s.nombre_semestre 
+                  FROM materias m
+                  INNER JOIN carrera_unam c ON m.id_carrera = c.id_carrera
+                  INNER JOIN semestre s ON m.id_semestre = s.id_semestre
+                  ORDER BY c.nombre_carrera, m.id_semestre, m.nombre_materia";
+        $result = $this->db->query($query);
         return $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
     }
 
-    public function getById(int $id)
+    /**
+     * Obtiene una materia por ID
+     */
+    public function getById($id)
     {
-        $stmt = $this->db->prepare("SELECT * FROM materias WHERE id_materia = ?");
-        if (!$stmt) {
-            return null;
-        }
+        $query = "SELECT m.*, c.nombre_carrera, s.nombre_semestre 
+                  FROM materias m
+                  INNER JOIN carrera_unam c ON m.id_carrera = c.id_carrera
+                  INNER JOIN semestre s ON m.id_semestre = s.id_semestre
+                  WHERE m.id_materia = ?";
+        $stmt = $this->db->prepare($query);
         $stmt->bind_param("i", $id);
         $stmt->execute();
         return $stmt->get_result()->fetch_assoc();
     }
 
-    public function create(array $data): bool
+    /**
+     * Obtiene materias por carrera
+     */
+    public function getByCarrera($idCarrera)
     {
-        if (empty($data['nombre_materia']) || empty($data['id_carrera']) || empty($data['id_semestre'])) {
-            return false;
-        }
+        $query = "SELECT m.*, c.nombre_carrera, s.nombre_semestre 
+                  FROM materias m
+                  INNER JOIN carrera_unam c ON m.id_carrera = c.id_carrera
+                  INNER JOIN semestre s ON m.id_semestre = s.id_semestre
+                  WHERE m.id_carrera = ?
+                  ORDER BY m.id_semestre, m.nombre_materia";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $idCarrera);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
 
-        $stmt = $this->db->prepare(
-            "INSERT INTO materias (nombre_materia, id_carrera, id_semestre) VALUES (?, ?, ?)"
-        );
-        if (!$stmt) {
-            return false;
+    /**
+     * Obtiene materias por carrera y semestre
+     */
+    public function getByCarreraSemestre($idCarrera, $idSemestre)
+    {
+        $query = "SELECT m.*, c.nombre_carrera, s.nombre_semestre 
+                  FROM materias m
+                  INNER JOIN carrera_unam c ON m.id_carrera = c.id_carrera
+                  INNER JOIN semestre s ON m.id_semestre = s.id_semestre
+                  WHERE m.id_carrera = ? AND m.id_semestre = ?
+                  ORDER BY m.nombre_materia";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("ii", $idCarrera, $idSemestre);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+    /**
+     * Obtiene semestres disponibles por carrera
+     */
+    public function getSemestresByCarrera($idCarrera)
+    {
+        $query = "SELECT DISTINCT s.id_semestre, s.nombre_semestre 
+                  FROM materias m
+                  INNER JOIN semestre s ON m.id_semestre = s.id_semestre
+                  WHERE m.id_carrera = ?
+                  ORDER BY s.id_semestre";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $idCarrera);
+        $stmt->execute();
+        $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        
+        // Si no hay materias, devolver todos los semestres
+        if (empty($result)) {
+            $query = "SELECT * FROM semestre ORDER BY id_semestre";
+            $result = $this->db->query($query);
+            return $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
         }
         
-        $nombre = $data['nombre_materia'];
-        $idCarrera = (int)$data['id_carrera'];
-        $idSemestre = (int)$data['id_semestre'];
-        
-        $stmt->bind_param("sii", $nombre, $idCarrera, $idSemestre);
+        return $result;
+    }
+
+    /**
+     * Crea una nueva materia
+     */
+    public function create($data)
+    {
+        $query = "INSERT INTO materias (nombre_materia, id_carrera, id_semestre) VALUES (?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("sii", $data['nombre_materia'], $data['id_carrera'], $data['id_semestre']);
         return $stmt->execute();
     }
 
-    public function update(int $id, array $data): bool
+    /**
+     * Actualiza una materia
+     */
+    public function update($id, $data)
     {
-        if (empty($data['nombre_materia']) || empty($data['id_carrera']) || empty($data['id_semestre'])) {
-            return false;
-        }
-
-        $stmt = $this->db->prepare(
-            "UPDATE materias SET nombre_materia = ?, id_carrera = ?, id_semestre = ? WHERE id_materia = ?"
-        );
-        if (!$stmt) {
-            return false;
-        }
-        
-        $nombre = $data['nombre_materia'];
-        $idCarrera = (int)$data['id_carrera'];
-        $idSemestre = (int)$data['id_semestre'];
-        
-        $stmt->bind_param("siii", $nombre, $idCarrera, $idSemestre, $id);
+        $query = "UPDATE materias SET nombre_materia = ?, id_carrera = ?, id_semestre = ? WHERE id_materia = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("siii", $data['nombre_materia'], $data['id_carrera'], $data['id_semestre'], $id);
         return $stmt->execute();
     }
 
-    public function delete(int $id): bool
+    /**
+     * Elimina una materia
+     */
+    public function delete($id)
     {
-        $stmt = $this->db->prepare("DELETE FROM materias WHERE id_materia = ?");
-        if (!$stmt) {
-            return false;
-        }
+        $query = "DELETE FROM materias WHERE id_materia = ?";
+        $stmt = $this->db->prepare($query);
         $stmt->bind_param("i", $id);
         return $stmt->execute();
     }
 }
+?>

@@ -22,6 +22,14 @@ class SidebarComponent extends HTMLElement {
         if (path.includes('/admin/')) {
             return '../';
         }
+        // Si estamos en /coordinator/pages/xxx.php -> base es ../../
+        if (path.includes('/coordinator/pages/')) {
+            return '../../';
+        }
+        // Si estamos en /coordinator/xxx.php -> base es ../
+        if (path.includes('/coordinator/')) {
+            return '../';
+        }
         // Si estamos en /pages/xxx.php -> base es ../
         if (path.includes('/pages/')) {
             return '../';
@@ -94,13 +102,15 @@ class SidebarComponent extends HTMLElement {
                 { icon: 'fa-chalkboard-teacher', label: 'Asignar Materias', path: basePath + 'admin/pages/asignar_materias.php' },
                 { icon: 'fa-database', label: 'Gestión BD', path: basePath + 'admin/pages/gestion_bd.php' },
                 { icon: 'fa-chart-bar', label: 'Estadísticas', path: basePath + 'admin/pages/estadisticas.php' },
+                { icon: 'fa-file-alt', label: 'Boletas', path: basePath + 'admin/pages/boletas.php' },
                 { icon: 'fa-user-graduate', label: 'Gestión Alumnos', path: basePath + 'admin/pages/gestion_alumnos.php' }
             ],
             2: [
                 { icon: 'fa-th-large', label: 'Dashboard', path: basePath + 'coordinator/dashboard.php' },
                 { icon: 'fa-chalkboard-teacher', label: 'Asignar Materias', path: basePath + 'coordinator/pages/asignar_materias.php' },
                 { icon: 'fa-user-graduate', label: 'Gestión Alumnos', path: basePath + 'coordinator/pages/gestion_alumnos.php' },
-                { icon: 'fa-chart-bar', label: 'Estadísticas', path: basePath + 'coordinator/pages/estadisticas.php' }
+                { icon: 'fa-file-alt', label: 'Boletas', path: basePath + 'coordinator/pages/boletas.php' },
+                { icon: 'fa-users', label: 'Maestros', path: basePath + 'coordinator/pages/gestion_maestros.php' },
             ],
             3: [
                 { icon: 'fa-th-large', label: 'Dashboard', path: basePath + 'teacher/dashboard.php' },

@@ -84,6 +84,13 @@ switch ($action) {
         }
         
         try {
+            // Si es maestro, procesar carreras
+            if ($_POST['id_rol'] == 3 && isset($_POST['maestro_carreras'])) {
+                $_POST['maestro_carreras'] = is_array($_POST['maestro_carreras']) ? 
+                    $_POST['maestro_carreras'] : 
+                    explode(',', $_POST['maestro_carreras']);
+            }
+            
             $result = $user->create($_POST);
             echo json_encode(['success' => $result]);
         } catch (Exception $e) {
@@ -107,6 +114,13 @@ switch ($action) {
         }
         
         try {
+            // Si es maestro, procesar carreras
+            if ($_POST['id_rol'] == 3 && isset($_POST['maestro_carreras'])) {
+                $_POST['maestro_carreras'] = is_array($_POST['maestro_carreras']) ? 
+                    $_POST['maestro_carreras'] : 
+                    explode(',', $_POST['maestro_carreras']);
+            }
+            
             $result = $user->update($id, $_POST);
             echo json_encode(['success' => $result]);
         } catch (Exception $e) {
@@ -152,6 +166,33 @@ switch ($action) {
             ]);
         }
         break;
+
+    case 'get_by_carrera':
+        if (!isset($_SESSION['usuario'])) {
+            http_response_code(401);
+            echo json_encode(['success' => false, 'message' => 'No autorizado']);
+            break;
+        }
+        $idCarrera = isset($_POST['id_carrera']) ? (int)$_POST['id_carrera'] : null;
+        $rol = isset($_POST['rol']) ? (int)$_POST['rol'] : null;
+        $result = $user->getByCarrera($idCarrera, $rol);
+        echo json_encode($result);
+        break;
+
+    case 'get_maestros_by_carrera':
+        if (!isset($_SESSION['usuario'])) {
+            http_response_code(401);
+            echo json_encode(['success' => false, 'message' => 'No autorizado']);
+            break;
+        }
+        $idCarrera = isset($_POST['id_carrera']) ? (int)$_POST['id_carrera'] : null;
+        if (!$idCarrera) {
+            echo json_encode(['success' => false, 'message' => 'Carrera no especificada']);
+            break;
+        }
+        $result = $user->getMaestrosByCarrera($idCarrera);
+        echo json_encode($result);
+        break;
     
     default:
         http_response_code(400);
@@ -159,4 +200,6 @@ switch ($action) {
             'success' => false,
             'message' => 'Acción inválida.'
         ]);
+        break;
 }
+?>

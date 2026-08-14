@@ -2767,3 +2767,1716 @@
     [session] => Activa
 )
 
+2026-08-12 19:43:05 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:43:08 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:43:33 - Array
+(
+    [action] => delete
+    [post] => Array
+        (
+            [action] => delete
+            [id] => 2
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:43:34 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:43:38 - Array
+(
+    [action] => delete
+    [post] => Array
+        (
+            [action] => delete
+            [id] => 2
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:43:40 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:43:42 - Array
+(
+    [action] => get
+    [post] => Array
+        (
+            [action] => get
+            [id] => 2
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:43:44 - Array
+(
+    [action] => update
+    [post] => Array
+        (
+            [action] => update
+            [id] => 2
+            [id_rol] => 1
+            [id_carrera] => 
+            [nombre] => dana
+            [apellido_paterno] => mandez
+            [apellido_materno] => garcia
+            [usuario] => ddana
+            [contrasena] => ingvega
+            [correo] => 
+            [telefono] => 
+            [activo] => 1
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:43:45 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:44:07 - Array
+(
+    [action] => create
+    [post] => Array
+        (
+            [action] => create
+            [id] => 
+            [id_rol] => 3
+            [id_carrera] => 
+            [nombre] => Prueba
+            [apellido_paterno] => maestro
+            [apellido_materno] => garcia
+            [usuario] => maestro
+            [contrasena] => maestro
+            [correo] => 
+            [telefono] => 
+            [activo] => 1
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:44:07 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:44:14 - Array
+(
+    [action] => delete
+    [post] => Array
+        (
+            [action] => delete
+            [id] => 44
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:44:14 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:44:37 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:44:38 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:44:43 - Array
+(
+    [action] => delete
+    [post] => Array
+        (
+            [action] => delete
+            [id] => 44
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:44:44 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:45:00 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:45:05 - Array
+(
+    [action] => delete
+    [post] => Array
+        (
+            [action] => delete
+            [id] => 44
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:45:06 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:45:42 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:47:36 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:47:36 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:47:37 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:47:42 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-12 19:47:48 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 18:53:46 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 18:53:57 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 18:54:06 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 18:54:08 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 19:02:36 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 19:03:29 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 19:11:29 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 19:14:22 - Array
+(
+    [action] => create
+    [post] => Array
+        (
+            [action] => create
+            [id] => 
+            [id_rol] => 3
+            [id_carrera] => 
+            [nombre] => manu
+            [apellido_paterno] => dupa
+            [apellido_materno] => ola
+            [usuario] => manu
+            [contrasena] => maninu
+            [correo] => 
+            [telefono] => 
+            [activo] => 1
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 19:14:23 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 19:14:26 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 19:14:36 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 19:14:52 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 19:15:02 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 19:15:33 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:05:47 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:05:50 - Array
+(
+    [action] => delete
+    [post] => Array
+        (
+            [action] => delete
+            [id] => 45
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:05:51 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:07:22 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:35:24 - Array
+(
+    [action] => create
+    [post] => Array
+        (
+            [action] => create
+            [id] => 
+            [id_rol] => 3
+            [id_carrera] => 
+            [nombre] => Vega
+            [apellido_paterno] => Barrera
+            [apellido_materno] => Barrera
+            [usuario] => mvega
+            [contrasena] => ingvega
+            [correo] => 
+            [telefono] => 
+            [activo] => 1
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:35:26 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:45:02 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => mvega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 20:47:12 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 20:47:20 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:47:22 - Array
+(
+    [action] => get
+    [post] => Array
+        (
+            [action] => get
+            [id] => 46
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:47:41 - Array
+(
+    [action] => update
+    [post] => Array
+        (
+            [action] => update
+            [id] => 46
+            [id_rol] => 2
+            [id_carrera] => 1
+            [nombre] => Vega
+            [apellido_paterno] => Barrera
+            [apellido_materno] => Barrera
+            [usuario] => mvega
+            [contrasena] => 
+            [correo] => 
+            [telefono] => 
+            [activo] => 1
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:47:42 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:48:30 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => mvega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 20:53:36 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 20:53:40 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:53:42 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:54:54 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 20:54:56 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:55:14 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 20:55:19 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:55:36 - Array
+(
+    [action] => create
+    [post] => Array
+        (
+            [action] => create
+            [id] => 
+            [id_rol] => 3
+            [id_carrera] => 
+            [nombre] => Julian misael
+            [apellido_paterno] => mandez
+            [apellido_materno] => garcia
+            [usuario] => maestro
+            [contrasena] => maestro
+            [correo] => 
+            [telefono] => 
+            [activo] => 1
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:55:37 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:55:45 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => mvega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 20:56:17 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 20:56:21 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:56:24 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:56:37 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:56:41 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:57:12 - Array
+(
+    [action] => create
+    [post] => Array
+        (
+            [action] => create
+            [id] => 
+            [id_rol] => 2
+            [id_carrera] => 4
+            [nombre] => dana
+            [apellido_paterno] => dana
+            [apellido_materno] => dana
+            [usuario] => dana
+            [contrasena] => ingdana
+            [correo] => 
+            [telefono] => 
+            [activo] => 1
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:57:14 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 20:57:20 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => dana
+            [password] => ingdana
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 21:06:03 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => mvega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 21:07:19 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => dana
+            [password] => ingdana
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 21:10:03 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => dana
+            [password] => ingdana
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 21:10:30 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => mvega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 21:13:20 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => dana
+            [password] => ingdana
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 21:15:18 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 21:16:28 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => dana
+            [password] => ingdana
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 21:16:48 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 21:16:52 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 21:17:14 - Array
+(
+    [action] => create
+    [post] => Array
+        (
+            [action] => create
+            [id] => 
+            [id_rol] => 3
+            [id_carrera] => 
+            [nombre] => maestro2
+            [apellido_paterno] => maestro2
+            [apellido_materno] => maestro2
+            [usuario] => maestro2
+            [contrasena] => maestro2
+            [correo] => 
+            [telefono] => 
+            [activo] => 1
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 21:17:15 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 21:17:23 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => dana
+            [password] => ingdana
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 21:45:59 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 21:46:01 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 21:46:43 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 21:47:00 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 21:47:29 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 21:47:29 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 21:47:33 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 21:47:34 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 21:47:35 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 21:49:27 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => mvega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 21:49:48 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => dana
+            [password] => ingdana
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 21:59:55 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 21:59:57 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 22:02:54 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 22:07:16 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => dana
+            [password] => ingdana
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 22:08:44 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-13 22:08:46 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 22:10:02 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 22:10:54 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-13 22:10:58 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 18:55:35 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-14 18:56:04 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:10:53 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => dana
+            [password] => ingdana
+        )
+
+    [session] => No activa
+)
+
+2026-08-14 19:11:12 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-14 19:22:47 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:23:26 - Array
+(
+    [action] => create
+    [post] => Array
+        (
+            [action] => create
+            [id] => 
+            [id_rol] => 2
+            [id_carrera] => 4
+            [nombre] => Manu
+            [apellido_paterno] => tripa
+            [apellido_materno] => tripon
+            [usuario] => mmanu
+            [contrasena] => licenciadomanu
+            [correo] => 
+            [telefono] => 
+            [activo] => 1
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:23:27 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:25:02 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:25:07 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:25:28 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:25:31 - Array
+(
+    [action] => delete
+    [post] => Array
+        (
+            [action] => delete
+            [id] => 47
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:25:31 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:25:35 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:33:51 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:34:13 - Array
+(
+    [action] => create
+    [post] => Array
+        (
+            [action] => create
+            [id] => 
+            [id_rol] => 3
+            [id_carrera] => 
+            [nombre] => vvega
+            [apellido_paterno] => vega
+            [apellido_materno] => vega
+            [usuario] => vega
+            [contrasena] => vegavega
+            [correo] => 
+            [telefono] => 
+            [activo] => 1
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:34:14 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:34:23 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => vega
+            [password] => vegavega
+        )
+
+    [session] => No activa
+)
+
+2026-08-14 19:35:46 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => vega
+            [password] => vegavega
+        )
+
+    [session] => No activa
+)
+
+2026-08-14 19:37:41 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-14 19:37:48 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:38:20 - Array
+(
+    [action] => create
+    [post] => Array
+        (
+            [action] => create
+            [id] => 
+            [id_rol] => 2
+            [id_carrera] => 2
+            [nombre] => julian
+            [apellido_paterno] => julian
+            [apellido_materno] => julian
+            [usuario] => jjulian
+            [contrasena] => jjulian
+            [correo] => 
+            [telefono] => 
+            [activo] => 1
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:38:22 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 19:38:28 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => jjulian
+            [password] => jjulian
+        )
+
+    [session] => No activa
+)
+
+2026-08-14 19:42:35 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => julian
+            [password] => jjulian
+        )
+
+    [session] => No activa
+)
+
+2026-08-14 19:42:53 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => julian
+            [password] => jjulian
+        )
+
+    [session] => No activa
+)
+
+2026-08-14 19:43:11 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => jjulian
+            [password] => jjulian
+        )
+
+    [session] => No activa
+)
+
+2026-08-14 20:23:11 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-14 20:23:13 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 20:23:20 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => jjulian
+            [password] => jjulian
+        )
+
+    [session] => No activa
+)
+
+2026-08-14 20:45:19 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+
+2026-08-14 20:45:21 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 20:45:42 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 20:46:47 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+
+2026-08-14 20:46:49 - Array
+(
+    [action] => list
+    [post] => Array
+        (
+            [action] => list
+        )
+
+    [session] => Activa
+)
+

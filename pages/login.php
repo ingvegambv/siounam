@@ -7,7 +7,7 @@ if (isset($_SESSION['usuario'])) {
     $redirects = [
         1 => '../admin/dashboard.php',
         2 => '../coordinator/dashboard.php',
-        3 => '../teacher/dashboard.php'
+        3 => '../maestro/dashboard.php'
     ];
     header('Location: ' . ($redirects[$_SESSION['usuario']['id_rol']] ?? '../index.php'));
     exit;
