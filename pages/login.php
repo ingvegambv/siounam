@@ -13,7 +13,6 @@ if (isset($_SESSION['usuario'])) {
     exit;
 }
 
-// Agregar headers para evitar caché
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
@@ -29,84 +28,106 @@ header("Pragma: no-cache");
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     
     <style>
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
+        
+        :root {
+            --primary-blue: #0056b3;
+            --secondary-gold: #d4af37;
+        }
+
+        
+        .login-body {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/img/fondo.png') no-repeat center center fixed;
+            background-size: cover;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        .login-container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            padding: 45px 40px;
-            width: 100%;
-            max-width: 420px;
-            animation: slideUp 0.5s ease;
-        }
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .login-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .login-header .logo {
-            font-size: 48px;
-            color: #667eea;
-            margin-bottom: 10px;
-            display: block;
-        }
-        
-        .login-header h1 {
-            color: #1a1a2e;
-            font-weight: 700;
-            font-size: 28px;
             margin: 0;
+            padding: 0;
+            min-height: 100vh;
         }
+
         
-        .login-header h1 span {
-            color: #667eea;
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: transparent;
+            border-radius: 24px;
         }
-        
-        .login-header .subtitle {
-            color: #7f8c8d;
-            font-size: 14px;
-            margin-top: 5px;
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px rgba(0,0,0,0.2) !important;
         }
-        
-        .form-floating {
-            margin-bottom: 15px;
-            position: relative;
+
+        .card .col-md-6:first-child {
+            background: rgba(0, 0, 0, 0.137) !important;
+            backdrop-filter: blur(10px);
         }
-        
-        .form-floating input {
+
+    
+        .form-control {
             border-radius: 12px;
-            border: 2px solid #e1e5eb;
+            padding: 12px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
-            height: 56px;
-            padding-right: 45px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
         }
-        
-        .form-floating input:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
         }
+
+        .form-control:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.25);
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        /* Botón ACCEDER */
+        .btn-primary {
+            background: linear-gradient(135deg, #0056b3 0%, #003d80 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 86, 179, 0.4);
+            background: linear-gradient(135deg, #003d80 0%, #002b66 100%);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+    
+        .alert-danger {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+            border-radius: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* Imagen del lado derecho  */
+        .col-md-6.p-0 img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         
+        
+        /* Toggle de contraseña */
         .password-toggle {
             position: absolute;
             right: 15px;
@@ -114,135 +135,148 @@ header("Pragma: no-cache");
             transform: translateY(-50%);
             background: none;
             border: none;
-            color: #95a5a6;
+            color: rgba(255, 255, 255, 0.6);
             cursor: pointer;
             font-size: 16px;
             padding: 5px;
             z-index: 10;
         }
-        
+
         .password-toggle:hover {
-            color: #667eea;
+            color: #ffffff;
         }
-        
-        .btn-login {
-            width: 100%;
-            padding: 14px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: none;
-            color: white;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-            height: 56px;
-            position: relative;
-        }
-        
-        .btn-login:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-        
-        .btn-login:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
-        
+
         .login-error {
-            color: #e74c3c;
+            color: #dc2626;
             font-size: 14px;
-            margin-top: 12px;
+            margin-top: 15px;
             text-align: center;
             display: none;
             padding: 10px 15px;
-            background: #fdf2f2;
-            border-radius: 8px;
-            border: 1px solid #fad2d2;
+            background: #fef2f2;
+            border-radius: 12px;
+            border: 1px solid #fecaca;
         }
-        
+
         .login-error.show {
             display: block;
             animation: shake 0.5s ease;
         }
-        
+
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
             25% { transform: translateX(-10px); }
             75% { transform: translateX(10px); }
         }
-        
-        .login-footer {
-            text-align: center;
-            margin-top: 25px;
-            color: #b0b8c4;
-            font-size: 13px;
-        }
-        
+
+    
         .spinner-border {
             width: 18px;
             height: 18px;
             border-width: 2px;
         }
+
         
+        @media (max-width: 768px) {
+            .col-md-6.d-none.d-md-block {
+                display: none !important;
+            }
+            .card {
+                margin: 1rem;
+            }
+            .p-4 {
+                padding: 1.5rem !important;
+            }
+        }
+
         @media (max-width: 480px) {
             .login-container {
                 padding: 30px 20px;
                 margin: 15px;
             }
         }
+
+        
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+            background: transparent;
+            color: #6c757d;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            margin-top: 20px;
+        }
     </style>
 </head>
-<body>
-    <div class="login-container">
-        <div class="login-header">
-            <span class="logo"><i class="fas fa-graduation-cap"></i></span>
-            <h1>SIO<span>UNAM</span></h1>
-            <p class="subtitle">Sistema Integral de la UNAM</p>
-        </div>
+<body class="login-body">
+
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
         
-        <form id="frmLogin" novalidate>
-            <div class="form-floating">
-                <input 
-                    type="text" 
-                    class="form-control" 
-                    id="usuario" 
-                    name="usuario" 
-                    placeholder="Usuario"
-                    required
-                    autocomplete="username"
-                    autofocus>
-                <label for="usuario"><i class="fas fa-user me-2"></i>Usuario</label>
+        <div class="card shadow-lg border-0 overflow-hidden" style="max-width: 1400px; width: 95%;">
+            <div class="row g-0">
+                
+                
+                <div class="col-md-6 d-flex align-items-center justify-content-center p-4 p-md-5">
+                    <div class="w-100" style="max-width: 320px;">
+                     
+                        <h1 class="fw-bold mb-2" style="color: #ffffff;">Bienvenido a SIOUNAM</h1>
+                        <h5 class="fw-bold mb-2" style="color: #ffffff;">Sistema Informativo Oparin.</h5>
+                        <p class="text mb-4" style="color: rgba(255,255,255,0.8);">Ingresa tu contraseña</p>
+
+                        <form id="frmLogin" novalidate>
+                           
+                            <div class="mb-3">
+                                <input 
+                                    type="text" 
+                                    name="usuario" 
+                                    class="form-control form-control-lg" 
+                                    id="usuario"
+                                    placeholder="Nombre de usuario" 
+                                    required
+                                    autocomplete="username"
+                                    autofocus>
+                            </div>
+                            
+                            
+                            <div class="mb-4 position-relative">
+                                <input 
+                                    type="password" 
+                                    name="password" 
+                                    class="form-control form-control-lg" 
+                                    id="password"
+                                    placeholder="Contraseña" 
+                                    required
+                                    autocomplete="current-password">
+                                <button type="button" class="password-toggle" id="togglePassword" title="Mostrar/Ocultar contraseña">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            
+                            
+                            <button type="submit" class="btn btn-primary w-100 btn-lg" id="btnLogin">
+                                ACCEDER
+                            </button>
+                            
+                            <div id="loginError" class="login-error"></div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-6 d-none d-md-block p-0">
+                    <img src="../assets/img/sisomosunam.png" alt="Logo 50 años OPARIN" class="img-fluid w-100 h-100" style="object-fit: cover; min-height: 550px;">
+                </div>
             </div>
-            
-            <div class="form-floating">
-                <input 
-                    type="password" 
-                    class="form-control" 
-                    id="password" 
-                    name="password" 
-                    placeholder="Contraseña"
-                    required
-                    autocomplete="current-password">
-                <label for="password"><i class="fas fa-lock me-2"></i>Contraseña</label>
-                <button type="button" class="password-toggle" id="togglePassword" title="Mostrar/Ocultar contraseña">
-                    <i class="fas fa-eye"></i>
-                </button>
-            </div>
-            
-            <button type="submit" class="btn btn-login" id="btnLogin">
-                <i class="fas fa-sign-in-alt me-2"></i>Iniciar sesión
-            </button>
-            
-            <div id="loginError" class="login-error"></div>
-        </form>
-        
-        <div class="login-footer">
-            &copy; 2026 SIOUNAM - Todos los derechos reservados
         </div>
     </div>
-    
+
+    <!-- Footer  -->
+    <footer>
+        &copy; 2026 SIOUNAM - Todos los derechos reservados
+    </footer>
+
     <script src="../assets/js/login.js"></script>
     <script>
         // Toggle password visibility
