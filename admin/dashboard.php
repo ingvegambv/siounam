@@ -39,6 +39,10 @@ require_once 'includes/auth_check.php';
             font-weight: 600;
         }
         
+        .chart-wrapper h5 i {
+            color: #2563eb;
+        }
+        
         .chart-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -73,6 +77,30 @@ require_once 'includes/auth_check.php';
             color: #b0b8c4;
         }
         
+        .stat-card .stat-icon i {
+            color: #2563eb;
+        }
+        
+        .stat-card .stat-number {
+            color: #1a202c;
+        }
+        
+        .stat-card .stat-label {
+            color: #4a5568;
+        }
+        
+        .stat-card h5 i {
+            color: #2563eb;
+        }
+        
+        .recent-activity-item i {
+            color: #2563eb;
+        }
+        
+        .recent-activity-item .activity-dot {
+            background: #2563eb;
+        }
+        
         @media (max-width: 768px) {
             .chart-grid {
                 grid-template-columns: 1fr;
@@ -95,22 +123,22 @@ require_once 'includes/auth_check.php';
             <!-- Stats Cards -->
             <div class="card-grid">
                 <div class="stat-card fade-in-up" style="animation-delay: 0.1s">
-                    <div class="stat-icon text-primary"><i class="fas fa-users"></i></div>
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
                     <div class="stat-number" id="totalUsuarios">0</div>
                     <div class="stat-label">Total Usuarios</div>
                 </div>
                 <div class="stat-card fade-in-up" style="animation-delay: 0.2s">
-                    <div class="stat-icon text-success"><i class="fas fa-user-graduate"></i></div>
+                    <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
                     <div class="stat-number" id="totalAlumnos">0</div>
                     <div class="stat-label">Total Alumnos</div>
                 </div>
                 <div class="stat-card fade-in-up" style="animation-delay: 0.3s">
-                    <div class="stat-icon text-warning"><i class="fas fa-book"></i></div>
+                    <div class="stat-icon"><i class="fas fa-book"></i></div>
                     <div class="stat-number" id="totalMaterias">0</div>
                     <div class="stat-label">Materias Activas</div>
                 </div>
                 <div class="stat-card fade-in-up" style="animation-delay: 0.4s">
-                    <div class="stat-icon text-danger"><i class="fas fa-users-cog"></i></div>
+                    <div class="stat-icon"><i class="fas fa-users-cog"></i></div>
                     <div class="stat-number" id="totalGrupos">0</div>
                     <div class="stat-label">Grupos Activos</div>
                 </div>
@@ -119,13 +147,13 @@ require_once 'includes/auth_check.php';
             <!-- Charts Row -->
             <div class="chart-grid">
                 <div class="chart-wrapper">
-                    <h5><i class="fas fa-chart-line text-primary me-2"></i>Evolución de Alumnos</h5>
+                    <h5><i class="fas fa-chart-line me-2"></i>Evolución de Alumnos</h5>
                     <div class="chart-container">
                         <canvas id="chartAlumnos"></canvas>
                     </div>
                 </div>
                 <div class="chart-wrapper">
-                    <h5><i class="fas fa-chart-pie text-primary me-2"></i>Distribución por Carrera</h5>
+                    <h5><i class="fas fa-chart-pie me-2"></i>Distribución por Carrera</h5>
                     <div class="chart-container">
                         <canvas id="chartCarreras"></canvas>
                     </div>
@@ -134,7 +162,7 @@ require_once 'includes/auth_check.php';
 
             <!-- Recent Activity -->
             <div class="stat-card">
-                <h5><i class="fas fa-clock text-primary me-2"></i>Actividad Reciente</h5>
+                <h5><i class="fas fa-clock me-2"></i>Actividad Reciente</h5>
                 <div id="actividadReciente" style="margin-top:10px;">
                     <p class="text-muted">Cargando actividad...</p>
                 </div>
@@ -209,11 +237,11 @@ require_once 'includes/auth_check.php';
                     datasets: [{
                         label: 'Alumnos',
                         data: values,
-                        borderColor: '#667eea',
-                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
                         fill: true,
                         tension: 0.4,
-                        pointBackgroundColor: '#667eea',
+                        pointBackgroundColor: '#2563eb',
                         pointBorderColor: '#fff',
                         pointBorderWidth: 2,
                         pointRadius: 4,
@@ -275,7 +303,8 @@ require_once 'includes/auth_check.php';
                 carrerasData = [{ label: 'Sin datos', value: 1 }];
             }
             
-            const colors = ['#667eea', '#2ecc71', '#f39c12', '#e74c3c', '#3498db', '#9b59b6', '#1abc9c', '#e67e22', '#2c3e50', '#95a5a6'];
+            // Todos los colores en tonos de azul
+            const colors = ['#2563eb', '#3b82f6', '#60a5fa', '#93c5fd', '#bfdbfe', '#1e40af', '#1d4ed8', '#3b82f6', '#60a5fa', '#93c5fd'];
             
             chartCarreras = new Chart(ctx, {
                 type: 'doughnut',
@@ -332,8 +361,8 @@ require_once 'includes/auth_check.php';
                         let html = '';
                         data.forEach(function(item) {
                             html += `
-                                <div style="display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid #f0f0f0;">
-                                    <div style="width:8px; height:8px; border-radius:50%; background: #667eea;"></div>
+                                <div class="recent-activity-item" style="display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid #f0f0f0;">
+                                    <div class="activity-dot" style="width:8px; height:8px; border-radius:50%; background:#2563eb;"></div>
                                     <span style="font-size:14px; color:#2c3e50;">${item}</span>
                                 </div>
                             `;
@@ -342,7 +371,7 @@ require_once 'includes/auth_check.php';
                     } else {
                         container.html(`
                             <div style="text-align:center; padding:20px; color:#7f8c8d;">
-                                <i class="fas fa-clock" style="font-size:24px; display:block; margin-bottom:10px;"></i>
+                                <i class="fas fa-clock" style="font-size:24px; display:block; margin-bottom:10px; color:#2563eb;"></i>
                                 <p>No hay actividad reciente</p>
                             </div>
                         `);

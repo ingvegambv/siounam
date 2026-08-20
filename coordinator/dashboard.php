@@ -59,13 +59,16 @@ $alumnosRecientes = $alumnoModel->getRecentByCarrera($idCarrera, 10);
             font-size: 2.5rem;
             opacity: 0.7;
         }
+        .stat-icon i {
+            color: #2563eb;
+        }
         .stat-number {
             font-size: 2rem;
             font-weight: bold;
-            color: #1a237e;
+            color: #1a202c;
         }
         .stat-label {
-            color: #666;
+            color: #4a5568;
             font-size: 0.9rem;
         }
         .recent-item {
@@ -76,8 +79,8 @@ $alumnosRecientes = $alumnoModel->getRecentByCarrera($idCarrera, 10);
             border-bottom: none;
         }
         .badge-grupo {
-            background: #e3f2fd;
-            color: #1565c0;
+            background: #eff6ff;
+            color: #2563eb;
             padding: 3px 10px;
             border-radius: 15px;
             font-size: 0.8rem;
@@ -87,6 +90,9 @@ $alumnosRecientes = $alumnoModel->getRecentByCarrera($idCarrera, 10);
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin-bottom: 30px;
+        }
+        .section-title i {
+            color: #2563eb;
         }
         @media (max-width: 768px) {
             .grid-2col {
@@ -102,7 +108,7 @@ $alumnosRecientes = $alumnoModel->getRecentByCarrera($idCarrera, 10);
         <main class="main-content">
             <header-component title="Dashboard de Coordinación">
                 <span slot="actions">
-                    <span class="badge" style="background: #1a237e; color: white; padding: 8px 16px; border-radius: 20px;">
+                    <span class="badge" style="background: #2563eb; color: white; padding: 8px 16px; border-radius: 20px;">
                         <i class="fas fa-university"></i> <?php echo htmlspecialchars($carrera['nombre_carrera'] ?? 'Carrera no asignada'); ?>
                     </span>
                 </span>
@@ -112,27 +118,27 @@ $alumnosRecientes = $alumnoModel->getRecentByCarrera($idCarrera, 10);
                 <!-- Tarjetas de estadísticas -->
                 <div class="row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
                     <div class="stat-card">
-                        <div class="stat-icon" style="color: #1565c0;"><i class="fas fa-users"></i></div>
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
                         <div class="stat-number"><?php echo $totalAlumnos; ?></div>
                         <div class="stat-label">Total Alumnos</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon" style="color: #2e7d32;"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <div class="stat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
                         <div class="stat-number"><?php echo $totalMaestros; ?></div>
                         <div class="stat-label">Total Maestros</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon" style="color: #e65100;"><i class="fas fa-book"></i></div>
+                        <div class="stat-icon"><i class="fas fa-book"></i></div>
                         <div class="stat-number"><?php echo $totalMaterias; ?></div>
                         <div class="stat-label">Total Materias</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon" style="color: #6a1b9a;"><i class="fas fa-layer-group"></i></div>
+                        <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
                         <div class="stat-number"><?php echo $totalGrupos; ?></div>
                         <div class="stat-label">Total Grupos</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon" style="color: #c62828;"><i class="fas fa-tasks"></i></div>
+                        <div class="stat-icon"><i class="fas fa-tasks"></i></div>
                         <div class="stat-number"><?php echo $totalAsignaciones; ?></div>
                         <div class="stat-label">Asignaciones</div>
                     </div>
@@ -141,19 +147,22 @@ $alumnosRecientes = $alumnoModel->getRecentByCarrera($idCarrera, 10);
                 <!-- Gráfico de alumnos por grupo -->
                 <div class="grid-2col">
                     <div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <h4 style="margin-bottom: 15px; color: #1a237e;">
-                            <i class="fas fa-chart-bar"></i> Alumnos por Grupo
+                        <h4 style="margin-bottom: 15px; color: #1a202c;">
+                            <i class="fas fa-chart-bar" style="color:#2563eb;"></i> Alumnos por Grupo
                         </h4>
                         <canvas id="gruposChart"></canvas>
                     </div>
                     
                     <div style="background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <h4 style="margin-bottom: 15px; color: #1a237e;">
-                            <i class="fas fa-clock"></i> Actividad Reciente
+                        <h4 style="margin-bottom: 15px; color: #1a202c;">
+                            <i class="fas fa-clock" style="color:#2563eb;"></i> Actividad Reciente
                         </h4>
                         <div style="max-height: 300px; overflow-y: auto;">
                             <?php if (empty($alumnosRecientes)): ?>
-                                <p style="color: #999; text-align: center; padding: 20px;">No hay actividad reciente</p>
+                                <p style="color: #999; text-align: center; padding: 20px;">
+                                    <i class="fas fa-clock" style="color:#2563eb; font-size:24px; display:block; margin-bottom:10px;"></i>
+                                    No hay actividad reciente
+                                </p>
                             <?php else: ?>
                                 <?php foreach ($alumnosRecientes as $alumno): ?>
                                     <div class="recent-item">
@@ -174,10 +183,10 @@ $alumnosRecientes = $alumnoModel->getRecentByCarrera($idCarrera, 10);
 
                 <!-- Alerta de pendientes -->
                 <?php if ($totalAsignaciones == 0 && $totalMaterias > 0): ?>
-                    <div style="background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
-                        <i class="fas fa-exclamation-triangle" style="color: #ff9800;"></i>
-                        <strong>¡Atención!</strong> No hay asignaciones de maestros para las materias de esta carrera.
-                        <a href="pages/asignar_materias.php" style="color: #1565c0; text-decoration: underline;">Asignar ahora</a>
+                    <div style="background: #eff6ff; border-left: 4px solid #2563eb; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                        <i class="fas fa-exclamation-triangle" style="color: #2563eb;"></i>
+                        <strong style="color:#1a202c;">¡Atención!</strong> <span style="color:#4a5568;">No hay asignaciones de maestros para las materias de esta carrera.</span>
+                        <a href="pages/asignar_materias.php" style="color: #2563eb; text-decoration: underline;">Asignar ahora</a>
                     </div>
                 <?php endif; ?>
             </div>
@@ -202,8 +211,8 @@ $alumnosRecientes = $alumnoModel->getRecentByCarrera($idCarrera, 10);
                     datasets: [{
                         label: 'Alumnos',
                         data: gruposData.map(item => parseInt(item.total)),
-                        backgroundColor: 'rgba(26, 35, 126, 0.7)',
-                        borderColor: 'rgba(26, 35, 126, 1)',
+                        backgroundColor: 'rgba(37, 99, 235, 0.7)',
+                        borderColor: '#2563eb',
                         borderWidth: 1
                     }]
                 },

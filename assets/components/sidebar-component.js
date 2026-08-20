@@ -109,23 +109,23 @@ class SidebarComponent extends HTMLElement {
         
         const menus = {
             1: [ // Administrador
-                { icon: 'fa-th-large', label: 'Dashboard', path: basePath + 'admin/dashboard.php' },
-                { icon: 'fa-users-cog', label: 'Gestión de Usuarios', path: basePath + 'admin/pages/gestion_usuarios.php' },
-                { icon: 'fa-chalkboard-teacher', label: 'Asignar Materias', path: basePath + 'admin/pages/asignar_materias.php' },
+                { icon: 'fa-home', label: 'Dashboard', path: basePath + 'admin/dashboard.php' },
+                { icon: 'fa-users', label: 'Gestión de Usuarios', path: basePath + 'admin/pages/gestion_usuarios.php' },
+                { icon: 'fa-book-open', label: 'Asignar Materias', path: basePath + 'admin/pages/asignar_materias.php' },
                 { icon: 'fa-database', label: 'Gestión BD', path: basePath + 'admin/pages/gestion_bd.php' },
                 { icon: 'fa-chart-bar', label: 'Estadísticas', path: basePath + 'admin/pages/estadisticas.php' },
                 { icon: 'fa-file-alt', label: 'Boletas', path: basePath + 'admin/pages/boletas.php' },
                 { icon: 'fa-user-graduate', label: 'Gestión Alumnos', path: basePath + 'admin/pages/gestion_alumnos.php' }
             ],
             2: [ // Coordinador
-                { icon: 'fa-th-large', label: 'Dashboard', path: basePath + 'coordinator/dashboard.php' },
-                { icon: 'fa-chalkboard-teacher', label: 'Asignar Materias', path: basePath + 'coordinator/pages/asignar_materias.php' },
+                { icon: 'fa-home', label: 'Dashboard', path: basePath + 'coordinator/dashboard.php' },
+                { icon: 'fa-book-open', label: 'Asignar Materias', path: basePath + 'coordinator/pages/asignar_materias.php' },
                 { icon: 'fa-user-graduate', label: 'Gestión Alumnos', path: basePath + 'coordinator/pages/gestion_alumnos.php' },
                 { icon: 'fa-file-alt', label: 'Boletas', path: basePath + 'coordinator/pages/boletas.php' },
                 { icon: 'fa-users', label: 'Maestros', path: basePath + 'coordinator/pages/gestion_maestros.php' }
             ],
             3: [ // Maestro
-                { icon: 'fa-chalkboard-teacher', label: 'Mis Materias', path: basePath + 'teacher/pages/mis_materias.php' },
+                { icon: 'fa-book-open', label: 'Mis Materias', path: basePath + 'teacher/pages/mis_materias.php' },
                 { icon: 'fa-file-alt', label: 'Boletas', path: basePath + 'teacher/pages/boletas.php' }
             ]
         };
@@ -155,28 +155,33 @@ class SidebarComponent extends HTMLElement {
                 .sidebar {
                     width: 280px;
                     height: 100%;
-                    background: linear-gradient(180deg, #1a1a2e 0%, #2c3e50 100%);
-                    color: #fff;
+                    background: #ffffff;
+                    color: #4a5568;
                     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                     display: flex;
                     flex-direction: column;
                     overflow: hidden;
-                    box-shadow: 2px 0 20px rgba(0,0,0,0.3);
+                    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.06);
+                    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+                    border-right: 1px solid #eef2f6;
                 }
 
                 .sidebar.collapsed {
-                    width: 70px;
+                    width: 90px;
                 }
 
                 .sidebar.collapsed .user-info,
                 .sidebar.collapsed .menu-item span,
                 .sidebar.collapsed .logout-btn span,
                 .sidebar.collapsed .role-badge,
-                .sidebar.collapsed .sidebar-title {
+                .sidebar.collapsed .brand-text,
+                .sidebar.collapsed .menu-label,
+                .sidebar.collapsed .menu-divider,
+                .sidebar.collapsed .item-arrow {
                     display: none;
                 }
 
-                .sidebar.collapsed .menu-item {
+                .sidebar.collapsed .menu-item a {
                     justify-content: center;
                     padding: 12px 0;
                 }
@@ -188,84 +193,189 @@ class SidebarComponent extends HTMLElement {
                 }
 
                 .sidebar.collapsed .menu-item i {
-                    font-size: 20px;
+                    font-size: 18px;
                     margin-right: 0;
                 }
 
-                .sidebar-header {
-                    padding: 20px 20px 10px 20px;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    border-bottom: 1px solid rgba(255,255,255,0.08);
+                .sidebar.collapsed .sidebar-header {
+                    padding: 16px 16px;
                 }
 
-                .sidebar-title {
-                    font-size: 18px;
-                    font-weight: 700;
-                    color: #fff;
-                    letter-spacing: 1px;
-                }
-
-                .sidebar-title span {
-                    color: #667eea;
-                }
-
-                .btn-toggle {
-                    background: rgba(255,255,255,0.05);
-                    border: 1px solid rgba(255,255,255,0.1);
-                    color: #fff;
-                    font-size: 16px;
-                    cursor: pointer;
-                    padding: 8px 12px;
-                    border-radius: 8px;
-                    transition: all 0.3s ease;
-                }
-
-                .btn-toggle:hover {
-                    background: rgba(255,255,255,0.1);
-                    color: #667eea;
-                }
-
-                .user-profile {
-                    padding: 20px;
-                    border-bottom: 1px solid rgba(255,255,255,0.08);
-                }
-
-                .avatar-container {
-                    display: flex;
-                    align-items: center;
-                    gap: 15px;
-                }
-
-                .avatar-circle {
-                    width: 55px;
-                    height: 55px;
-                    border-radius: 50%;
-                    background: linear-gradient(135deg, #667eea, #764ba2);
-                    display: flex;
-                    align-items: center;
+                .sidebar.collapsed .user-profile {
+                    padding: 12px 16px;
                     justify-content: center;
-                    font-size: 22px;
-                    font-weight: 600;
-                    color: #fff;
-                    flex-shrink: 0;
+                }
+
+                .sidebar.collapsed .brand-logo {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                .sidebar.collapsed .btn-toggle {
+                    margin-left: auto;
+                }
+
+                .sidebar.collapsed .profile-card {
+                    justify-content: center;
+                    padding: 10px 0;
+                }
+
+                .sidebar.collapsed .avatar-container {
+                    margin: 0 auto;
+                }
+
+                /* Header / Branding */
+                .sidebar-header {
+                    padding: 24px 20px 16px 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
                     position: relative;
                 }
 
-                .avatar-circle .online-status {
+                .brand-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                }
+
+                .brand-logo {
+                    width: 50px;
+                    height: 42px;
+                    border: 2px solid #2563eb;
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: #2563eb;
+                    color: #ffffff;
+                    font-size: 20px;
+                    font-weight: bold;
+                    flex-shrink: 0;
+                    overflow: hidden;
+                    padding: 2px;
+                }
+
+                .brand-logo img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+
+                .brand-text {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .brand-title {
+                    font-size: 20px;
+                    font-weight: 700;
+                    letter-spacing: -0.5px;
+                    line-height: 1;
+                }
+
+                .brand-title .sio {
+                    color: #1a202c;
+                }
+
+                .brand-title .unam {
+                    color: #2563eb;
+                }
+
+                .brand-subtitle {
+                    font-size: 9px;
+                    font-weight: 600;
+                    color: #718096;
+                    letter-spacing: 1px;
+                    margin-top: 4px;
+                    text-transform: uppercase;
+                }
+
+                .btn-toggle {
+                    background: transparent;
+                    border: 1px solid #e2e8f0;
+                    color: #a0aec0;
+                    font-size: 14px;
+                    cursor: pointer;
+                    padding: 6px 10px;
+                    border-radius: 6px;
+                    transition: all 0.2s ease;
+                    flex-shrink: 0;
+                }
+
+                .btn-toggle:hover {
+                    background: #f7fafc;
+                    color: #2563eb;
+                    border-color: #2563eb;
+                }
+
+                /* Header line divider */
+                .header-divider {
+                    height: 1px;
+                    background: #eef2f6;
+                    margin: 0 20px 16px 20px;
+                }
+
+                /* Perfil de Usuario - Sin interactividad */
+                .user-profile {
+                    padding: 0 16px;
+                    margin-bottom: 20px;
+                }
+
+                .profile-card {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    padding: 10px 12px;
+                    border-radius: 10px;
+                    background: #f7fafc;
+                    border: 1px solid #eef2f6;
+                    cursor: default;
+                }
+
+                .avatar-container {
+                    position: relative;
+                    flex-shrink: 0;
+                }
+
+                .avatar-circle {
+                    width: 46px;
+                    height: 46px;
+                    border-radius: 10px;
+                    background: #2563eb;
+                    border: 2px solid #3b82f6;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #ffffff;
+                    overflow: hidden;
+                }
+
+                .avatar-circle img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .badge-star {
                     position: absolute;
-                    bottom: 2px;
-                    right: 2px;
-                    width: 14px;
-                    height: 14px;
-                    background: #2ecc71;
+                    bottom: -2px;
+                    right: -2px;
+                    width: 18px;
+                    height: 18px;
+                    background: #fbbf24;
                     border-radius: 50%;
-                    border: 2px solid #1a1a2e;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #ffffff;
+                    font-size: 9px;
+                    border: 2px solid #ffffff;
                 }
 
                 .user-info {
-                    text-align: left;
                     flex: 1;
                     overflow: hidden;
                 }
@@ -273,35 +383,28 @@ class SidebarComponent extends HTMLElement {
                 .user-info strong {
                     display: block;
                     font-size: 14px;
-                    color: #fff;
+                    font-weight: 600;
+                    color: #1a202c;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                }
-
-                .user-info small {
-                    display: block;
-                    font-size: 11px;
-                    color: #a8b5c4;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
+                    text-transform: uppercase;
                 }
 
                 .role-badge {
-                    display: inline-block;
-                    background: rgba(102, 126, 234, 0.2);
-                    color: #667eea;
-                    padding: 2px 10px;
-                    border-radius: 12px;
-                    font-size: 10px;
-                    margin-top: 3px;
-                    border: 1px solid rgba(102, 126, 234, 0.2);
+                    display: block;
+                    font-size: 12px;
+                    color: #2563eb;
+                    margin-top: 2px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
 
+                /* Navegación */
                 .sidebar-nav {
                     flex: 1;
-                    padding: 15px 0;
+                    padding: 0;
                     overflow-y: auto;
                 }
 
@@ -309,13 +412,13 @@ class SidebarComponent extends HTMLElement {
                     width: 4px;
                 }
 
-                .sidebar-nav::-webkit-scrollbar-track {
-                    background: rgba(255,255,255,0.05);
+                .sidebar-nav::-webkit-scrollbar-thumb {
+                    background: #e2e8f0;
+                    border-radius: 4px;
                 }
 
-                .sidebar-nav::-webkit-scrollbar-thumb {
-                    background: #667eea;
-                    border-radius: 2px;
+                .sidebar-nav::-webkit-scrollbar-track {
+                    background: transparent;
                 }
 
                 .menu-list {
@@ -324,167 +427,228 @@ class SidebarComponent extends HTMLElement {
                     margin: 0;
                 }
 
+                .menu-label {
+                    padding: 16px 20px 8px 20px;
+                    font-size: 11px;
+                    font-weight: 600;
+                    letter-spacing: 0.8px;
+                    color: #a0aec0;
+                    text-transform: uppercase;
+                }
+
+                .menu-divider {
+                    height: 1px;
+                    margin: 8px 20px;
+                    background: #eef2f6;
+                }
+
                 .menu-item {
-                    margin: 2px 12px;
-                    border-radius: 10px;
-                    transition: all 0.3s ease;
+                    margin: 1px 0;
                 }
 
                 .menu-item a {
                     display: flex;
                     align-items: center;
-                    gap: 15px;
-                    padding: 11px 15px;
-                    color: rgba(255,255,255,0.6);
+                    padding: 10px 20px;
+                    color: #4a5568;
                     text-decoration: none;
-                    border-radius: 10px;
-                    transition: all 0.3s ease;
+                    transition: all 0.2s ease;
                     position: relative;
-                }
-
-                .menu-item a i {
-                    width: 20px;
-                    font-size: 16px;
-                    transition: all 0.3s ease;
-                    text-align: center;
-                }
-
-                .menu-item a span {
-                    font-size: 13px;
+                    font-size: 14px;
                     font-weight: 500;
                 }
 
+                .menu-item a i.menu-icon {
+                    width: 24px;
+                    font-size: 16px;
+                    margin-right: 12px;
+                    text-align: center;
+                    color: #a0aec0;
+                    transition: all 0.2s ease;
+                }
+
+                .menu-item a span {
+                    flex: 1;
+                }
+
+                .menu-item a .item-arrow {
+                    font-size: 11px;
+                    color: #cbd5e0;
+                    transition: transform 0.2s ease;
+                }
+
                 .menu-item:hover a {
-                    background: rgba(255,255,255,0.05);
-                    color: #fff;
+                    color: #1a202c;
+                    background: #f7fafc;
                 }
 
+                .menu-item:hover a i.menu-icon {
+                    color: #2563eb;
+                }
+
+                .menu-item:hover a .item-arrow {
+                    color: #2563eb;
+                }
+
+                /* Estado Activo */
                 .menu-item.active a {
-                    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
-                    color: #fff;
-                    border: 1px solid rgba(102, 126, 234, 0.2);
+                    background: #eff6ff;
+                    color: #1a202c;
+                    font-weight: 600;
+                    border-left: 4px solid #2563eb;
+                    padding-left: 16px;
+                    border-radius: 0 8px 8px 0;
+                    margin-right: 12px;
                 }
 
-                .menu-item.active a::before {
-                    content: '';
-                    position: absolute;
-                    left: -2px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    width: 3px;
-                    height: 20px;
-                    background: linear-gradient(180deg, #667eea, #764ba2);
-                    border-radius: 0 3px 3px 0;
+                .menu-item.active a i.menu-icon {
+                    color: #2563eb;
                 }
 
+                .menu-item.active a .item-arrow {
+                    display: none;
+                }
+
+                /* Footer / Logout */
                 .sidebar-footer {
-                    padding: 15px 20px;
-                    border-top: 1px solid rgba(255,255,255,0.08);
+                    padding: 16px 20px 24px 20px;
+                    border-top: 1px solid #eef2f6;
                 }
 
                 .logout-btn {
                     display: flex;
                     align-items: center;
-                    gap: 15px;
-                    padding: 10px 15px;
-                    color: rgba(255, 107, 107, 0.7);
+                    gap: 12px;
+                    padding: 10px 12px;
+                    color: #4a5568;
                     text-decoration: none;
-                    border-radius: 10px;
-                    transition: all 0.3s ease;
-                    cursor: pointer;
-                    border: 1px solid transparent;
+                    border: none;
                     background: transparent;
                     width: 100%;
                     font-size: 14px;
+                    font-weight: 500;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    border-radius: 8px;
                 }
 
                 .logout-btn:hover {
-                    background: rgba(255, 107, 107, 0.1);
-                    color: #ff6b6b;
-                    border-color: rgba(255, 107, 107, 0.2);
+                    background: #fef2f2;
+                    color: #dc2626;
+                }
+
+                .logout-btn:hover i {
+                    color: #dc2626;
                 }
 
                 .logout-btn i {
-                    width: 20px;
                     font-size: 16px;
+                    width: 24px;
                     text-align: center;
+                    color: #a0aec0;
+                    transition: all 0.2s ease;
                 }
 
                 /* Responsive */
                 @media (max-width: 768px) {
                     .sidebar {
-                        width: 70px;
+                        width: 90px;
                     }
-                    
+
                     .sidebar .user-info,
                     .sidebar .menu-item span,
                     .sidebar .logout-btn span,
                     .sidebar .role-badge,
-                    .sidebar .sidebar-title {
+                    .sidebar .brand-text,
+                    .sidebar .menu-label,
+                    .sidebar .menu-divider,
+                    .sidebar .item-arrow {
                         display: none;
-                    }
-                    
-                    .sidebar .menu-item {
-                        justify-content: center;
-                    }
-                    
-                    .sidebar .avatar-circle {
-                        width: 40px;
-                        height: 40px;
-                        font-size: 14px;
                     }
 
                     .sidebar .menu-item a {
                         justify-content: center;
-                        padding: 11px 0;
+                        padding: 12px 0;
                     }
 
-                    .sidebar .menu-item a i {
+                    .sidebar .avatar-circle {
+                        width: 40px;
+                        height: 40px;
+                        font-size: 14px;
+                        border-radius: 8px;
+                    }
+
+                    .sidebar .menu-item i {
                         margin-right: 0;
                     }
-                }
 
-                @keyframes fadeIn {
-                    from {
-                        opacity: 0;
-                        transform: translateX(-20px);
+                    .sidebar .sidebar-header {
+                        padding: 16px 16px;
+                        justify-content: center;
                     }
-                    to {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                }
 
-                .sidebar {
-                    animation: fadeIn 0.4s ease;
+                    .sidebar .brand-logo {
+                        width: 40px;
+                        height: 40px;
+                    }
+
+                    .sidebar .badge-star {
+                        width: 14px;
+                        height: 14px;
+                        font-size: 7px;
+                    }
+
+                    .sidebar .profile-card {
+                        justify-content: center;
+                        padding: 10px 0;
+                    }
+
+                    .sidebar .avatar-container {
+                        margin: 0 auto;
+                    }
                 }
             </style>
 
             <div class="sidebar ${this.collapsed ? 'collapsed' : ''}" id="sidebar">
                 <div class="sidebar-header">
-                    <div class="sidebar-title">SIO<span>UNAM</span></div>
+                    <div class="brand-container">
+                        <div class="brand-logo">
+                            <img src="${this.getBasePath()}assets/img/logo.png" alt="Logo" id="logoImg">
+                        </div>
+                        <div class="brand-text">
+                            <span class="brand-title">
+                                <span class="sio">SIO</span><span class="unam">UNAM</span>
+                            </span>
+                            
+                        </div>
+                    </div>
                     <button class="btn-toggle" id="toggleBtn" title="Toggle sidebar">
-                        <i class="fas fa-chevron-left"></i>
+                        <i class="fas ${this.collapsed ? 'fa-chevron-right' : 'fa-chevron-left'}"></i>
                     </button>
                 </div>
 
+                <div class="header-divider"></div>
+
                 <div class="user-profile">
-                    <div class="avatar-container">
-                        <div class="avatar-circle">
-                            <span id="userInitials">U</span>
-                            <span class="online-status"></span>
+                    <div class="profile-card">
+                        <div class="avatar-container">
+                            <div class="avatar-circle" id="avatarContainer">
+                                <img src="${this.getBasePath()}assets/img/logo50.jpeg" alt="Avatar" id="userAvatar">
+                            </div>
+                            <div class="badge-star">
+                                <i class="fas fa-star"></i>
+                            </div>
                         </div>
                         <div class="user-info">
-                            <strong id="userName">Usuario</strong>
-                            <small id="userUsername">@usuario</small>
-                            <span class="role-badge" id="userRole">Rol</span>
+                            <strong id="userName">DANA MENDEZ</strong>
+                            <span class="role-badge" id="userRole">Administrador</span>
                         </div>
                     </div>
                 </div>
 
                 <nav class="sidebar-nav">
                     <ul class="menu-list" id="menuList">
-                        <!-- Items will be rendered here -->
+                        <!-- Items dynamically populated -->
                     </ul>
                 </nav>
 
@@ -503,21 +667,56 @@ class SidebarComponent extends HTMLElement {
         if (!menuList) return;
 
         const currentPath = window.location.pathname;
-        
+
+        const categoryMap = {
+            'Gestión de Usuarios': 'GESTIÓN ACADÉMICA',
+            'Asignar Materias': 'GESTIÓN ACADÉMICA',
+            'Gestión BD': 'GESTIÓN ACADÉMICA',
+            'Estadísticas': 'GESTIÓN ACADÉMICA',
+            'Boletas': 'GESTIÓN ACADÉMICA',
+            'Gestión Alumnos': 'GESTIÓN ACADÉMICA',
+            'Maestros': 'GESTIÓN ACADÉMICA',
+            'Mis Materias': 'GESTIÓN ACADÉMICA'
+        };
+
         let html = '';
-        this.menuItems.forEach(item => {
-            // Verificar si la ruta actual coincide con la del menú
+        let currentCategory = '';
+
+        this.menuItems.forEach((item) => {
             const isActive = currentPath.includes(item.path.replace('.php', '').split('/').pop()) || 
                            (item.path.includes('dashboard') && currentPath.includes('dashboard'));
-            
-            html += `
-                <li class="menu-item ${isActive ? 'active' : ''}">
-                    <a href="${item.path}" data-tooltip="${item.label}">
-                        <i class="fas ${item.icon}"></i>
-                        <span>${item.label}</span>
-                    </a>
-                </li>
-            `;
+
+            if (item.label === 'Dashboard') {
+                html += `
+                    <li class="menu-item ${isActive ? 'active' : ''}">
+                        <a href="${item.path}">
+                            <i class="fas ${item.icon} menu-icon"></i>
+                            <span>${item.label}</span>
+                            <i class="fas fa-chevron-right item-arrow"></i>
+                        </a>
+                    </li>
+                `;
+            } else {
+                const category = categoryMap[item.label] || 'GESTIÓN ACADÉMICA';
+
+                if (category !== currentCategory) {
+                    if (currentCategory !== '') {
+                        html += `<li class="menu-divider"></li>`;
+                    }
+                    html += `<li class="menu-label">${category}</li>`;
+                    currentCategory = category;
+                }
+
+                html += `
+                    <li class="menu-item ${isActive ? 'active' : ''}">
+                        <a href="${item.path}">
+                            <i class="fas ${item.icon} menu-icon"></i>
+                            <span>${item.label}</span>
+                            <i class="fas fa-chevron-right item-arrow"></i>
+                        </a>
+                    </li>
+                `;
+            }
         });
 
         menuList.innerHTML = html;
@@ -540,37 +739,94 @@ class SidebarComponent extends HTMLElement {
         }
 
         this.updateUserInfo();
+
+        // Manejar error de carga de imagen del logo
+        const logoImg = this.shadowRoot.getElementById('logoImg');
+        if (logoImg) {
+            logoImg.addEventListener('error', () => {
+                logoImg.style.display = 'none';
+                const parent = logoImg.parentElement;
+                parent.textContent = 'U';
+                parent.style.display = 'flex';
+                parent.style.alignItems = 'center';
+                parent.style.justifyContent = 'center';
+                parent.style.fontSize = '20px';
+                parent.style.fontWeight = 'bold';
+                parent.style.color = '#ffffff';
+            });
+        }
+
+        // Manejar error de carga de la imagen del avatar
+        const userAvatar = this.shadowRoot.getElementById('userAvatar');
+        if (userAvatar) {
+            userAvatar.addEventListener('error', () => {
+                const container = this.shadowRoot.getElementById('avatarContainer');
+                const initials = this.user ? 
+                    `${this.user.nombre?.charAt(0) || ''}${this.user.apellido_paterno?.charAt(0) || ''}`.toUpperCase() : 
+                    'U';
+                container.innerHTML = `<span style="font-size:16px;font-weight:700;color:#ffffff;">${initials || 'U'}</span>`;
+                container.style.background = '#2563eb';
+                container.style.display = 'flex';
+                container.style.alignItems = 'center';
+                container.style.justifyContent = 'center';
+            });
+        }
     }
 
     updateUserInfo() {
         if (!this.user) {
-            const nameElem = this.shadowRoot.getElementById('userInitials');
-            const userName = this.shadowRoot.getElementById('userName');
-            const userUsername = this.shadowRoot.getElementById('userUsername');
+            const nameElem = this.shadowRoot.getElementById('userName');
             const userRole = this.shadowRoot.getElementById('userRole');
+            const avatarContainer = this.shadowRoot.getElementById('avatarContainer');
 
-            if (nameElem) nameElem.textContent = 'U';
-            if (userName) userName.textContent = 'Usuario';
-            if (userUsername) userUsername.textContent = '@usuario';
+            if (nameElem) nameElem.textContent = 'USUARIO';
             if (userRole) userRole.textContent = 'Rol';
+            if (avatarContainer) {
+                avatarContainer.innerHTML = `<span style="font-size:16px;font-weight:700;color:#ffffff;">U</span>`;
+                avatarContainer.style.background = '#2563eb';
+                avatarContainer.style.display = 'flex';
+                avatarContainer.style.alignItems = 'center';
+                avatarContainer.style.justifyContent = 'center';
+            }
             return;
         }
 
-        const initials = this.user.nombre && this.user.apellido_paterno 
-            ? `${this.user.nombre.charAt(0)}${this.user.apellido_paterno.charAt(0)}`.toUpperCase()
-            : 'U';
-        
-        const nameElem = this.shadowRoot.getElementById('userInitials');
+        // Actualizar nombre en mayúsculas
         const userName = this.shadowRoot.getElementById('userName');
-        const userUsername = this.shadowRoot.getElementById('userUsername');
-        const userRole = this.shadowRoot.getElementById('userRole');
-
-        if (nameElem) nameElem.textContent = initials;
-        if (userName) userName.textContent = `${this.user.nombre || ''} ${this.user.apellido_paterno || ''}`.trim() || 'Usuario';
-        if (userUsername) userUsername.textContent = `@${this.user.usuario || 'usuario'}`;
+        if (userName) {
+            const fullName = `${this.user.nombre || ''} ${this.user.apellido_paterno || ''}`.trim();
+            userName.textContent = fullName.toUpperCase() || 'USUARIO';
+        }
         
+        // Actualizar rol
+        const userRole = this.shadowRoot.getElementById('userRole');
         const roles = ['', 'Administrador', 'Coordinador', 'Maestro'];
         if (userRole) userRole.textContent = roles[this.user.id_rol] || 'Rol';
+
+        // Actualizar avatar - imagen fija logo50.png
+        const avatarContainer = this.shadowRoot.getElementById('avatarContainer');
+        if (avatarContainer) {
+            // Si el avatar tiene la imagen, la mantenemos, pero aseguramos que la imagen esté
+            const existingImg = avatarContainer.querySelector('img');
+            if (!existingImg) {
+                avatarContainer.innerHTML = `<img src="${this.getBasePath()}assets/img/logo50.jpeg" alt="Avatar" id="userAvatar">`;
+                // Manejar error de carga de la nueva imagen
+                const newImg = avatarContainer.querySelector('img');
+                if (newImg) {
+                    newImg.addEventListener('error', () => {
+                        const initials = `${this.user.nombre?.charAt(0) || ''}${this.user.apellido_paterno?.charAt(0) || ''}`.toUpperCase();
+                        avatarContainer.innerHTML = `<span style="font-size:16px;font-weight:700;color:#ffffff;">${initials || 'U'}</span>`;
+                        avatarContainer.style.background = '#2563eb';
+                        avatarContainer.style.display = 'flex';
+                        avatarContainer.style.alignItems = 'center';
+                        avatarContainer.style.justifyContent = 'center';
+                    });
+                }
+            } else {
+                // Asegurar que la imagen tenga la ruta correcta
+                existingImg.src = `${this.getBasePath()}assets/img/logo50.jpeg`;
+            }
+        }
     }
 
     toggleSidebar() {
