@@ -4480,3 +4480,16 @@
     [session] => Activa
 )
 
+2026-08-19 22:09:57 - Array
+(
+    [action] => login
+    [post] => Array
+        (
+            [action] => login
+            [usuario] => avega
+            [password] => ingvega
+        )
+
+    [session] => No activa
+)
+

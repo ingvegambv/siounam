@@ -30,6 +30,14 @@ class SidebarComponent extends HTMLElement {
         if (path.includes('/coordinator/')) {
             return '../';
         }
+        // Si estamos en /teacher/pages/xxx.php -> base es ../../
+        if (path.includes('/teacher/pages/')) {
+            return '../../';
+        }
+        // Si estamos en /teacher/xxx.php -> base es ../
+        if (path.includes('/teacher/')) {
+            return '../';
+        }
         // Si estamos en /pages/xxx.php -> base es ../
         if (path.includes('/pages/')) {
             return '../';
@@ -39,6 +47,10 @@ class SidebarComponent extends HTMLElement {
     }
 
     connectedCallback() {
+        const savedState = localStorage.getItem('sidebarCollapsed');
+        if (savedState !== null) {
+            this.collapsed = savedState === 'true';
+        }
         this.loadUserData();
         this.render();
         this.setupEventListeners();
@@ -96,7 +108,7 @@ class SidebarComponent extends HTMLElement {
         const basePath = this.getBasePath();
         
         const menus = {
-            1: [
+            1: [ // Administrador
                 { icon: 'fa-th-large', label: 'Dashboard', path: basePath + 'admin/dashboard.php' },
                 { icon: 'fa-users-cog', label: 'Gestión de Usuarios', path: basePath + 'admin/pages/gestion_usuarios.php' },
                 { icon: 'fa-chalkboard-teacher', label: 'Asignar Materias', path: basePath + 'admin/pages/asignar_materias.php' },
@@ -105,17 +117,16 @@ class SidebarComponent extends HTMLElement {
                 { icon: 'fa-file-alt', label: 'Boletas', path: basePath + 'admin/pages/boletas.php' },
                 { icon: 'fa-user-graduate', label: 'Gestión Alumnos', path: basePath + 'admin/pages/gestion_alumnos.php' }
             ],
-            2: [
+            2: [ // Coordinador
                 { icon: 'fa-th-large', label: 'Dashboard', path: basePath + 'coordinator/dashboard.php' },
                 { icon: 'fa-chalkboard-teacher', label: 'Asignar Materias', path: basePath + 'coordinator/pages/asignar_materias.php' },
                 { icon: 'fa-user-graduate', label: 'Gestión Alumnos', path: basePath + 'coordinator/pages/gestion_alumnos.php' },
                 { icon: 'fa-file-alt', label: 'Boletas', path: basePath + 'coordinator/pages/boletas.php' },
-                { icon: 'fa-users', label: 'Maestros', path: basePath + 'coordinator/pages/gestion_maestros.php' },
+                { icon: 'fa-users', label: 'Maestros', path: basePath + 'coordinator/pages/gestion_maestros.php' }
             ],
-            3: [
-                { icon: 'fa-th-large', label: 'Dashboard', path: basePath + 'teacher/dashboard.php' },
-                { icon: 'fa-users', label: 'Mis Alumnos', path: basePath + 'teacher/pages/mis_alumnos.php' },
-                { icon: 'fa-book', label: 'Calificaciones', path: basePath + 'teacher/pages/calificaciones.php' }
+            3: [ // Maestro
+                { icon: 'fa-chalkboard-teacher', label: 'Mis Materias', path: basePath + 'teacher/pages/mis_materias.php' },
+                { icon: 'fa-file-alt', label: 'Boletas', path: basePath + 'teacher/pages/boletas.php' }
             ]
         };
 
@@ -620,17 +631,6 @@ class SidebarComponent extends HTMLElement {
     }
 
     refreshMenu() {
-        this.loadMenuItems();
-    }
-
-    connectedCallback() {
-        const savedState = localStorage.getItem('sidebarCollapsed');
-        if (savedState !== null) {
-            this.collapsed = savedState === 'true';
-        }
-        this.loadUserData();
-        this.render();
-        this.setupEventListeners();
         this.loadMenuItems();
     }
 }
